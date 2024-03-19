@@ -26,7 +26,7 @@
 <meta property="og:description" content="一.双系统时区问题1.1 问题描述当安装了 Windows 和 Manjaro 双系统后，发现出现了 Windows 系统时间比 Manjaro 系统时间慢 8 小时的情况。 1.2 问题分析在电脑中会有两个时间，一个是硬件时间，一个是系统时间。  硬件时间：这个时间信息存储在电脑主板中，因此没有夏令时以及时区等概念。 系统时间：这个时间信息由系统管理，通常是通过网络时间同步（Network Ti">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-31T12:01:21.000Z">
-<meta property="article:modified_time" content="2024-02-23T13:08:51.606Z">
+<meta property="article:modified_time" content="2024-03-19T17:08:21.926Z">
 <meta property="article:author" content="DustWind">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Manjaro">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          2.6k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          18 分钟
+          22 分钟
         
       </span>
     
@@ -333,7 +333,10 @@
 </ul>
 <blockquote>
 <p><strong>注</strong>：</p>
-<p>修改hosts文件,就修改了IP 地址和域名之间的映射关系。修改 hosts 文件域名解析就会访问 hosts 文件中的 IP和域名的映射关系以访问指定网站。</p>
+<ol>
+<li>修改hosts文件,就修改了IP 地址和域名之间的映射关系。修改 hosts 文件域名解析就会访问 hosts 文件中的 IP和域名的映射关系以访问指定网站。</li>
+<li>如果想要更加完整的 GitHub DNS 解析列表可在 Gitee 上查询相关仓库并将其更新到本地的 Hosts 文件当中。</li>
+</ol>
 </blockquote>
 <ul>
 <li>然后将 IP 地址和域名的映射关系写入系统的 hosts 文件中。</li>
@@ -347,8 +350,17 @@
 
 
 
-<h2 id="3-2-解决方法"><a href="#3-2-解决方法" class="headerlink" title="3.2 解决方法"></a>3.2 解决方法</h2><p>具体的原因呢，是 archlinux-keyring 滚不动了。解决的思路是重新初始化一下 keyring：</p>
+<h2 id="3-2-解决方法"><a href="#3-2-解决方法" class="headerlink" title="3.2 解决方法"></a>3.2 解决方法</h2><p>这儿可能会有两种情况出现</p>
+<ol>
+<li>第一种原因呢，是 <code>archlinux-keyring</code> 滚不动了。根本原因呢就是升级到了 <code>gnupg-2.1</code>，pacman 上游更新了密钥环的格式，这使得本地的主密钥无法签署其它密钥。。解决的思路是初始化 keyring 亦或者是将其更换为 <code>archlinuxcn-keyring</code>。本节参考的如下链接：<a target="_blank" rel="noopener" href="https://www.archlinuxcn.org/gnupg-2-1-and-the-pacman-keyring/">GnuPG-2.1 与 pacman 密钥环</a></li>
+</ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">1,移除旧的 keys</span><br>sudo rm -rf /etc/pacman.d/gnupg<br><span class="hljs-meta prompt_"># </span><span class="language-bash">2,初始化 pacman 的keys</span><br>sudo pacman-key --init<br><span class="hljs-meta prompt_"># </span><span class="language-bash">3,加载签名的keys</span><br>sudo pacman-key --populate<br><span class="hljs-meta prompt_"># </span><span class="language-bash">4,刷新升级已经签名的keys,这一步可以选择跳过</span><br>sudo pacman-key --refresh-keys<br><span class="hljs-meta prompt_"># </span><span class="language-bash">5,清空并且下载新数据</span><br>sudo pacman -Sc<br><span class="hljs-meta prompt_"># </span><span class="language-bash">6,安装archlinuxcn-keyring</span><br>sudo pacman -S archlinuxcn-keyring<br></code></pre></td></tr></table></figure>
+
+<p>然后再更新系统和软件，发现问题解决。</p>
+<ol start="2">
+<li>第二种情况呢，是 archlinuxcn 社区源的 keyring 包 archlinuxcn-keyring 由 <code>farseerfc</code> 的 key 签署验证，而 Arch Linux 官方 keyring 中包含了 <code>farseerfc</code> 的 key 。解决思路呢就是使用如下命令在本地信任 <code>farseerfc</code> 的 key。本节参照的如下链接：<a target="_blank" rel="noopener" href="https://www.archlinuxcn.org/archlinuxcn-keyring-manually-trust-farseerfc-key/">手动信任 farseerfc 的 key</a></li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash"></span><br><span class="language-bash"><span class="hljs-comment"># 此 key 已随 archlinux-keyring 安装在系统中，只是缺乏信任</span></span><br>sudo pacman-key --lsign-key &quot;farseerfc@archlinux.org&quot;<br></code></pre></td></tr></table></figure>
 
 <p>然后再更新系统和软件，发现问题解决。</p>
 
