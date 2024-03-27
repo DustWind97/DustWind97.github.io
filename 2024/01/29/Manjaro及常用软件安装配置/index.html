@@ -57,7 +57,7 @@
 <meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85.png">
 <meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86.png">
 <meta property="article:published_time" content="2024-01-29T14:00:40.000Z">
-<meta property="article:modified_time" content="2024-02-29T11:55:01.274Z">
+<meta property="article:modified_time" content="2024-03-27T09:45:15.825Z">
 <meta property="article:author" content="DustWind">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Manjaro">
@@ -255,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9k 字
+          9.4k 字
         
       </span>
     
@@ -266,7 +266,7 @@
         
         
         
-          76 分钟
+          79 分钟
         
       </span>
     
@@ -692,7 +692,7 @@
 
 <p>此时发现了 <code>user@1000.service</code> 仍在运行</p>
 <ol start="4">
-<li>使用 systemctl status 命令继续查看 <a href="mailto:&#117;&#115;&#x65;&#114;&#64;&#49;&#x30;&#x30;&#48;&#x2e;&#x73;&#101;&#x72;&#x76;&#x69;&#x63;&#101;">&#117;&#115;&#x65;&#114;&#64;&#49;&#x30;&#x30;&#48;&#x2e;&#x73;&#101;&#x72;&#x76;&#x69;&#x63;&#101;</a> 服务</li>
+<li>使用 systemctl status 命令继续查看 <a href="mailto:&#117;&#x73;&#101;&#114;&#64;&#x31;&#48;&#48;&#48;&#46;&#115;&#x65;&#114;&#x76;&#105;&#99;&#x65;">&#117;&#x73;&#101;&#114;&#64;&#x31;&#48;&#48;&#48;&#46;&#115;&#x65;&#114;&#x76;&#105;&#99;&#x65;</a> 服务</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo systemctl status user@1000.service<br></code></pre></td></tr></table></figure>
 
@@ -736,8 +736,14 @@
 
 <blockquote>
 <p><strong>注</strong>：</p>
-<p>这里的端口对应的是软件 UI 界面上 Port 栏目的端口号。</p>
-<p>此外，想正常科学上网还需要相应的订阅节点，网上有很多免费节点可用， 这里便不再展开。</p>
+<ol>
+<li><p>这里的端口对应的是软件 UI 界面上 Port 栏目的端口号。</p>
+</li>
+<li><p>想正常科学上网还需要相应的订阅节点，网上有很多免费节点可用， 这里便不再展开。</p>
+</li>
+<li><p>如果设置了开机自动启动 <code>Clash for Windows</code> 而不想在桌面显示，可以在软件设置中开启 <code>静默启动（Silent Start）</code> 选项。</p>
+</li>
+</ol>
 </blockquote>
 <p>至此，Clash for Windows 的 Manjaro 版本便安装完毕。</p>
 <h2 id="3-5-QQ-安装"><a href="#3-5-QQ-安装" class="headerlink" title="3.5 QQ 安装"></a>3.5 QQ 安装</h2><p>近年来，随着国产 Linux 发行版的兴起。QQ 也顺应时代通过 QQNT（Electron）技术对原先的腾讯QQ进行改造并至今发布多个版本。可以通过以下命令进行安装：</p>
@@ -745,7 +751,17 @@
 
 
 
-<h2 id="3-6-QQ音乐安装"><a href="#3-6-QQ音乐安装" class="headerlink" title="3.6 QQ音乐安装"></a>3.6 QQ音乐安装</h2><p>在 AUR 社区可以看到 @<a target="_blank" rel="noopener" href="https://aur.archlinux.org/account/Hill-98">Hill-98</a> 大佬有两个版本的 QQ音乐软件包。</p>
+<h2 id="3-6-微信安装"><a href="#3-6-微信安装" class="headerlink" title="3.6 微信安装"></a>3.6 微信安装</h2><p>近期，腾讯公司推出了运行在国产 Linux 发行版系统上的 Universal 版微信。此版本一经推出，受到广大 Linux 用户及开发者的关注，AUR 上的大佬通过打包将这一安装包发布在 AUR 仓库。笔者也第一时间去安装体验了这一版本。具体安装如下指令所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yay -S wechat-universal-bwrap<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-7-腾讯会议安装"><a href="#3-7-腾讯会议安装" class="headerlink" title="3.7 腾讯会议安装"></a>3.7 腾讯会议安装</h2><p>腾讯会议可在官网下载各种架构的 Linux 版本，下载 deb 包自行打包也可以，当然也可以在 AUR 上获取相应的软件安装包。笔者习惯在 AUR 上获取软件，具体命令如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yay -S wemeet-bin<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-8-QQ音乐安装"><a href="#3-8-QQ音乐安装" class="headerlink" title="3.8 QQ音乐安装"></a>3.8 QQ音乐安装</h2><p>在 AUR 社区可以看到 @<a target="_blank" rel="noopener" href="https://aur.archlinux.org/account/Hill-98">Hill-98</a> 大佬有两个版本的 QQ音乐软件包。</p>
 <ul>
 <li><p>1.1.5-8 版本对应的名称为：<a target="_blank" rel="noopener" href="https://aur.archlinux.org/packages/qqmusic-electron">qqmusic-electron</a></p>
 </li>
@@ -757,12 +773,12 @@
 
 
 
-<h2 id="3-7-顶部栏隐藏"><a href="#3-7-顶部栏隐藏" class="headerlink" title="3.7 顶部栏隐藏"></a>3.7 顶部栏隐藏</h2><p>此插件的功能是当应用最大化时能自动隐藏顶部栏，此软件通过 yay 安装即可。</p>
+<h2 id="3-9-顶部栏隐藏"><a href="#3-9-顶部栏隐藏" class="headerlink" title="3.9 顶部栏隐藏"></a>3.9 顶部栏隐藏</h2><p>此插件的功能是当应用最大化时能自动隐藏顶部栏，此软件通过 yay 安装即可。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yay -S gnome-shell-extension-hidetopbar-git<br></code></pre></td></tr></table></figure>
 
 
 
-<h2 id="3-8-WPS-Office-套件安装"><a href="#3-8-WPS-Office-套件安装" class="headerlink" title="3.8 WPS Office 套件安装"></a>3.8 WPS Office 套件安装</h2><p>使用如下命令即可安装 WPS 套件：</p>
+<h2 id="3-10-WPS-Office-套件安装"><a href="#3-10-WPS-Office-套件安装" class="headerlink" title="3.10 WPS Office 套件安装"></a>3.10 WPS Office 套件安装</h2><p>使用如下命令即可安装 WPS 套件：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">WPS软件本体（国际版）</span><br>yay -S wps-office<br><span class="hljs-meta prompt_"># </span><span class="language-bash">WPS的中文语言包</span><br>yay -S wps-office-mui-zh-cn<br><span class="hljs-meta prompt_"># </span><span class="language-bash">WPS的符号依赖包</span><br>yay -S ttf-wps-fonts<br></code></pre></td></tr></table></figure>
 
 
@@ -778,12 +794,12 @@
 </li>
 </ol>
 </blockquote>
-<h2 id="3-9-GitHub-Desktop-安装"><a href="#3-9-GitHub-Desktop-安装" class="headerlink" title="3.9 GitHub Desktop 安装"></a>3.9 GitHub Desktop 安装</h2><p>Github Desktop 在 AUR 上有相应的包，这里可以通过如下命令安装：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">AUR上有许多版本，这里选用的是中文版</span><br>yay -S github-desktop-zh-bin<br></code></pre></td></tr></table></figure>
+<h2 id="3-11-GitHub-Desktop-安装"><a href="#3-11-GitHub-Desktop-安装" class="headerlink" title="3.11 GitHub Desktop 安装"></a>3.11 GitHub Desktop 安装</h2><p>Github Desktop 在 AUR 上有相应的包，这里可以通过如下命令安装：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">AUR上有许多版本，这里选用的是中文版</span><br>yay -S github-desktop-zh-bin<br><span class="hljs-meta prompt_"># </span><span class="language-bash">如果使用原生的英文版，可用如下指令安装</span><br>yay -S github-desktop-bin<br></code></pre></td></tr></table></figure>
 
 
 
-<h2 id="3-10-笔记软件"><a href="#3-10-笔记软件" class="headerlink" title="3.10 笔记软件"></a>3.10 笔记软件</h2><p>由于 <code>Notepad++</code> 并不支持众多 Linux 系统，所以可以使用 <code>Notepadqq</code> 、 <code>NotepadNext</code>  或者是 <code>Notepad--</code> 软件平替。当然，如果需要书写 Markdown 格式笔记更加流畅的体验，可以安装 <code>Typora</code> 软件。</p>
+<h2 id="3-12-笔记软件"><a href="#3-12-笔记软件" class="headerlink" title="3.12 笔记软件"></a>3.12 笔记软件</h2><p>由于 <code>Notepad++</code> 并不支持众多 Linux 系统，所以可以使用 <code>Notepadqq</code> 、 <code>NotepadNext</code>  或者是 <code>Notepad--</code> 软件平替。当然，如果需要书写 Markdown 格式笔记更加流畅的体验，可以安装 <code>Typora</code> 软件。</p>
 <ol>
 <li><code>Notepadqq</code> 软件安装：</li>
 </ol>
