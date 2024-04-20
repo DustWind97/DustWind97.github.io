@@ -57,7 +57,7 @@
 <meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85.png">
 <meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86.png">
 <meta property="article:published_time" content="2024-01-29T14:00:40.000Z">
-<meta property="article:modified_time" content="2024-03-27T09:45:15.825Z">
+<meta property="article:modified_time" content="2024-04-20T14:03:17.628Z">
 <meta property="article:author" content="DustWind">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Manjaro">
@@ -255,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9.4k 字
+          9.6k 字
         
       </span>
     
@@ -266,7 +266,7 @@
         
         
         
-          79 分钟
+          81 分钟
         
       </span>
     
@@ -692,7 +692,7 @@
 
 <p>此时发现了 <code>user@1000.service</code> 仍在运行</p>
 <ol start="4">
-<li>使用 systemctl status 命令继续查看 <a href="mailto:&#117;&#x73;&#101;&#114;&#64;&#x31;&#48;&#48;&#48;&#46;&#115;&#x65;&#114;&#x76;&#105;&#99;&#x65;">&#117;&#x73;&#101;&#114;&#64;&#x31;&#48;&#48;&#48;&#46;&#115;&#x65;&#114;&#x76;&#105;&#99;&#x65;</a> 服务</li>
+<li>使用 systemctl status 命令继续查看 <a href="mailto:&#117;&#115;&#101;&#x72;&#x40;&#49;&#x30;&#x30;&#48;&#46;&#x73;&#x65;&#114;&#118;&#105;&#99;&#101;">&#117;&#115;&#101;&#x72;&#x40;&#49;&#x30;&#x30;&#48;&#46;&#x73;&#x65;&#114;&#118;&#105;&#99;&#101;</a> 服务</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo systemctl status user@1000.service<br></code></pre></td></tr></table></figure>
 
@@ -707,7 +707,7 @@
 
 
 
-<h2 id="3-4-Clash-软件安装"><a href="#3-4-Clash-软件安装" class="headerlink" title="3.4 Clash 软件安装"></a>3.4 Clash 软件安装</h2><p><strong>来自官网的介绍</strong>：Clash for Windows 是代理工具 Clash 在 Windows 系统的唯一图形客户端，同时还支持Windows、Linux、macOS 三大系统，功能强大且支持多种代理协议，如 Shadowsocks(SS)、ShadowsocksR(SSR)、Socks、Snell、V2Ray、Trojan 等代理协议。由于不知名原因，Clash for Windows 的作者已在 Github 上删库跑路，最终版本停在了 0.20.39 版本。</p>
+<h2 id="3-4-Clash-软件安装"><a href="#3-4-Clash-软件安装" class="headerlink" title="3.4 Clash 软件安装"></a>3.4 Clash 软件安装</h2><h3 id="3-4-1-Clash-for-Windows"><a href="#3-4-1-Clash-for-Windows" class="headerlink" title="3.4.1 Clash for Windows"></a>3.4.1 Clash for Windows</h3><p><strong>来自官网的介绍</strong>：Clash for Windows 是代理工具 Clash 在 Windows 系统的唯一图形客户端，同时还支持Windows、Linux、macOS 三大系统，功能强大且支持多种代理协议，如 Shadowsocks(SS)、ShadowsocksR(SSR)、Socks、Snell、V2Ray、Trojan 等代理协议。由于不知名原因，Clash for Windows 的作者已在 Github 上删库跑路，最终版本停在了 0.20.39 版本。</p>
 <ol>
 <li><p>首先下载 Clash for Windows 软件的 deb 软件包。在 Github 上有许多备份包可供下载，这里不再赘述。</p>
 </li>
@@ -746,6 +746,13 @@
 </ol>
 </blockquote>
 <p>至此，Clash for Windows 的 Manjaro 版本便安装完毕。</p>
+<h3 id="3-4-2-Clash-Verge"><a href="#3-4-2-Clash-Verge" class="headerlink" title="3.4.2 Clash Verge"></a>3.4.2 Clash Verge</h3><p>除了使用 Clash for Windows 之外，你还可以选择使用基于 <code>Tauri</code> 的 Clash Verge 软件。具体的安装可采用如下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yay -S clash-verge-rev-bin<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>注</strong>：</p>
+<p>装完打不开前端面板，疑似N卡最新闭源驱动不支持webkit硬件渲染。解决的办法是在 <code>/etc/environment</code> 配置文件中添加环境变量： <code>WEBKIT_DISABLE_COMPOSITING_MODE=1</code>。</p>
+</blockquote>
 <h2 id="3-5-QQ-安装"><a href="#3-5-QQ-安装" class="headerlink" title="3.5 QQ 安装"></a>3.5 QQ 安装</h2><p>近年来，随着国产 Linux 发行版的兴起。QQ 也顺应时代通过 QQNT（Electron）技术对原先的腾讯QQ进行改造并至今发布多个版本。可以通过以下命令进行安装：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yay -S linuxqq<br></code></pre></td></tr></table></figure>
 
