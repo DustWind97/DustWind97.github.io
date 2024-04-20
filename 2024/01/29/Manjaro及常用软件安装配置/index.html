@@ -57,7 +57,7 @@
 <meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85.png">
 <meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86.png">
 <meta property="article:published_time" content="2024-01-29T14:00:40.000Z">
-<meta property="article:modified_time" content="2024-04-20T14:03:17.628Z">
+<meta property="article:modified_time" content="2024-04-20T14:08:51.167Z">
 <meta property="article:author" content="DustWind">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Manjaro">
@@ -692,7 +692,7 @@
 
 <p>此时发现了 <code>user@1000.service</code> 仍在运行</p>
 <ol start="4">
-<li>使用 systemctl status 命令继续查看 <a href="mailto:&#117;&#115;&#101;&#x72;&#x40;&#49;&#x30;&#x30;&#48;&#46;&#x73;&#x65;&#114;&#118;&#105;&#99;&#101;">&#117;&#115;&#101;&#x72;&#x40;&#49;&#x30;&#x30;&#48;&#46;&#x73;&#x65;&#114;&#118;&#105;&#99;&#101;</a> 服务</li>
+<li>使用 systemctl status 命令继续查看 <a href="mailto:&#117;&#115;&#x65;&#114;&#64;&#x31;&#48;&#x30;&#48;&#x2e;&#115;&#x65;&#114;&#118;&#x69;&#99;&#x65;">&#117;&#115;&#x65;&#114;&#64;&#x31;&#48;&#x30;&#48;&#x2e;&#115;&#x65;&#114;&#118;&#x69;&#99;&#x65;</a> 服务</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo systemctl status user@1000.service<br></code></pre></td></tr></table></figure>
 
@@ -751,7 +751,7 @@
 
 <blockquote>
 <p><strong>注</strong>：</p>
-<p>装完打不开前端面板，疑似N卡最新闭源驱动不支持webkit硬件渲染。解决的办法是在 <code>/etc/environment</code> 配置文件中添加环境变量： <code>WEBKIT_DISABLE_COMPOSITING_MODE=1</code>。</p>
+<p>装完打不开前端面板，疑似N卡最新闭源驱动不支持 webkit 硬件渲染。解决的办法是在 <code>/etc/environment</code> 配置文件中添加环境变量: <code>WEBKIT_DISABLE_COMPOSITING_MODE=1</code>。</p>
 </blockquote>
 <h2 id="3-5-QQ-安装"><a href="#3-5-QQ-安装" class="headerlink" title="3.5 QQ 安装"></a>3.5 QQ 安装</h2><p>近年来，随着国产 Linux 发行版的兴起。QQ 也顺应时代通过 QQNT（Electron）技术对原先的腾讯QQ进行改造并至今发布多个版本。可以通过以下命令进行安装：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yay -S linuxqq<br></code></pre></td></tr></table></figure>
