@@ -57,7 +57,7 @@
 <meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85.png">
 <meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86.png">
 <meta property="article:published_time" content="2024-01-29T14:00:40.000Z">
-<meta property="article:modified_time" content="2024-04-20T14:08:51.167Z">
+<meta property="article:modified_time" content="2024-05-09T06:06:34.180Z">
 <meta property="article:author" content="DustWind">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Manjaro">
@@ -255,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9.6k 字
+          10k 字
         
       </span>
     
@@ -266,7 +266,7 @@
         
         
         
-          81 分钟
+          84 分钟
         
       </span>
     
@@ -554,7 +554,7 @@
 
 
 <h1 id="二-系统换源"><a href="#二-系统换源" class="headerlink" title="二.系统换源"></a>二.系统换源</h1><p>为了保证 Manjaro 系统下载软件的流畅性，通常需要将软件源更改为国内高校或者阿里腾讯等互联网大厂的软件镜像源。以下部分将介绍镜像源配置流程。</p>
-<h2 id="2-1-获取源列表并换源"><a href="#2-1-获取源列表并换源" class="headerlink" title="2.1 获取源列表并换源"></a>2.1 获取源列表并换源</h2><ol>
+<h2 id="2-1-获取源列表并更换官方源"><a href="#2-1-获取源列表并更换官方源" class="headerlink" title="2.1 获取源列表并更换官方源"></a>2.1 获取源列表并更换官方源</h2><ol>
 <li>执行如下命令出现镜像源复选框：</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pacman-mirrors -c China -i -m rank<br></code></pre></td></tr></table></figure>
@@ -578,7 +578,7 @@
 
 
 
-<h2 id="2-2-Arch源更换"><a href="#2-2-Arch源更换" class="headerlink" title="2.2 Arch源更换"></a>2.2 Arch源更换</h2><p>将 <code>archlinuxcn</code> 和 <code>arch4edu</code> 的源也更换一下。</p>
+<h2 id="2-2-Arch-Linux-CN-源更换"><a href="#2-2-Arch-Linux-CN-源更换" class="headerlink" title="2.2 Arch Linux CN 源更换"></a>2.2 Arch Linux CN 源更换</h2><p>在更换 <code>archlinuxcn</code> 源时将 <code>arch4edu</code> 的源也更换一下。</p>
 <ol>
 <li>使用 gedit 程序命令访问配置文件</li>
 </ol>
@@ -587,7 +587,9 @@
 <ol start="2">
 <li>然后在文件末尾添加如下内容并保存</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">[archlinuxcn]<br>SigLevel = TrustedOnly<br><span class="hljs-meta prompt_"># </span><span class="language-bash">阿里源</span><br>Server = https://mirrors.aliyun.com/archlinuxcn/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">中科大源</span><br>Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">163源</span><br>Server = http://mirrors.163.com/archlinux-cn/$arch<br><br>[arch4edu]<br>SigLevel = Optional TrustAll<br><span class="hljs-meta prompt_"># </span><span class="language-bash">阿里edu源</span><br>Server = https://mirrors.aliyun.com/arch4edu/$arch<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs shell">[archlinuxcn]<br>SigLevel = TrustedOnly<br><span class="hljs-meta prompt_"># </span><span class="language-bash">中国科学技术大学</span><br>Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">重庆邮电大学</span><br>Server = https://mirrors.cqupt.edu.cn/archlinuxcn/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">重庆大学</span><br>Server = https://mirrors.cqu.edu.cn/archlinuxcn/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">南方科技大学</span><br>Server = https://mirrors.sustech.edu.cn/archlinuxcn/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">华中科技大学</span><br>Server = https://mirrors.hust.edu.cn/archlinuxcn/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">北京外国语大学</span><br>Server = https://mirrors.bfsu.edu.cn/archlinuxcn/$arch<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">阿里源</span><br>Server = https://mirrors.aliyun.com/archlinuxcn/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">163源</span><br>Server = http://mirrors.163.com/archlinux-cn/$arch<br><br><br>[arch4edu]<br>SigLevel = Optional TrustAll<br><span class="hljs-meta prompt_"># </span><span class="language-bash">阿里edu源</span><br>Server = https://mirrors.aliyun.com/arch4edu/$arch<br></code></pre></td></tr></table></figure>
+
+
 
 <div style="text-align: center;">
     <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E6%9B%B4%E6%96%B0%E6%BA%90/4.%E5%8A%A0%E5%85%A5archlinuxcn%E5%92%8Carch4edu%E6%BA%90.png" srcset="/img/loading.gif" lazyload alt="更换archlinuxcn和arch4edu源"  />
@@ -692,7 +694,7 @@
 
 <p>此时发现了 <code>user@1000.service</code> 仍在运行</p>
 <ol start="4">
-<li>使用 systemctl status 命令继续查看 <a href="mailto:&#117;&#115;&#x65;&#114;&#x40;&#49;&#48;&#x30;&#48;&#46;&#x73;&#x65;&#x72;&#x76;&#105;&#x63;&#101;">&#117;&#115;&#x65;&#114;&#x40;&#49;&#48;&#x30;&#48;&#46;&#x73;&#x65;&#x72;&#x76;&#105;&#x63;&#101;</a> 服务</li>
+<li>使用 systemctl status 命令继续查看 <a href="mailto:&#117;&#115;&#x65;&#114;&#64;&#x31;&#48;&#x30;&#48;&#46;&#115;&#101;&#x72;&#x76;&#105;&#99;&#x65;">&#117;&#115;&#x65;&#114;&#64;&#x31;&#48;&#x30;&#48;&#46;&#115;&#101;&#x72;&#x76;&#105;&#99;&#x65;</a> 服务</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo systemctl status user@1000.service<br></code></pre></td></tr></table></figure>
 
