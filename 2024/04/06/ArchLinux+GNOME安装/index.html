@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Arch%20Linux%20Install/%E9%95%9C%E5%83%8F%E5%86%99%E5%85%A5%E8%BD%AF%E4%BB%B6Ventoy/2.%E5%B0%86Ventoy%E5%AE%89%E8%A3%85%E5%88%B0U%E7%9B%98%E9%87%8C.png">
 <meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Arch%20Linux%20Install/%E9%95%9C%E5%83%8F%E5%86%99%E5%85%A5%E8%BD%AF%E4%BB%B6Ventoy/3.%E6%88%90%E5%8A%9F%E5%B0%86Ventoy%E5%AE%89%E8%A3%85%E5%88%B0U%E7%9B%98%E4%B8%AD.png">
 <meta property="article:published_time" content="2024-04-06T15:00:19.000Z">
-<meta property="article:modified_time" content="2024-05-09T05:55:41.620Z">
+<meta property="article:modified_time" content="2024-05-21T09:34:26.509Z">
 <meta property="article:author" content="DustWind">
 <meta property="article:tag" content="Arch">
 <meta property="article:tag" content="Linux">
@@ -282,7 +282,7 @@
               <div class="markdown-body">
                 
                 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本安装教程是根据 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97">ArchWiki—安装指南 </a> 、 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/vconlln/articles/17065410.html">Archlinux安装与美化全流程</a>  以及笔者多次试验总结而成。如有遗漏或者错误请多指正。</p>
-<h1 id="一-准备工作"><a href="#一-准备工作" class="headerlink" title="一.准备工作"></a>一.准备工作</h1><h2 id="1-1-写入软件"><a href="#1-1-写入软件" class="headerlink" title="1.1 写入软件"></a>1.1 写入软件</h2><p>当前市面上有许多U盘烧录工具，如Rufus、USBWriter、Ventoy等。笔者在这里强烈建议使用 Ventoy ，它是由国人制作的一款完全免费的开源工具，可以非常简单地部署启动镜像。在此贴上链接：<a target="_blank" rel="noopener" href="https://www.ventoy.net/cn/">Ventoy官网</a> 。</p>
+<h1 id="一-准备工作"><a href="#一-准备工作" class="headerlink" title="一.准备工作"></a>一.准备工作</h1><h2 id="1-1-写入软件"><a href="#1-1-写入软件" class="headerlink" title="1.1 写入软件"></a>1.1 写入软件</h2><p>当前市面上有许多U盘烧录工具，如Rufus、USBWriter、Ventoy等。笔者在这里强烈建议使用 Ventoy ，它是由国人制作的一款完全免费的开源工具，可以非常简单地部署启动镜像。在此贴上链接：<a target="_blank" rel="noopener" href="https://www.ventoy.net/cn/">Ventoy官网</a> 。   </p>
 <h2 id="1-2-镜像文件"><a href="#1-2-镜像文件" class="headerlink" title="1.2 镜像文件"></a>1.2 镜像文件</h2><p>当今网络非常发达，想要获取资源也有多个途径。简单给出镜像获取的两种途径：</p>
 <ol>
 <li><p>Arch Linux 官方网站下载 ISO 文件：<a target="_blank" rel="noopener" href="https://archlinux.org/download/">Arch Linux Downloads</a></p>
@@ -433,6 +433,10 @@
 
 
 
+<blockquote>
+<p><strong>注</strong>：</p>
+<p>分区挂载完一定要查看是否挂载成功，否则后续装入系统可能会出现各种问题</p>
+</blockquote>
 <h2 id="2-6-安装基础系统"><a href="#2-6-安装基础系统" class="headerlink" title="2.6 安装基础系统"></a>2.6 安装基础系统</h2><p>使用 <code>pacstrap</code>命令可以安装 Arch Linux 的基本系统</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">pacstrap -K /mnt base base-devel linux linux-firmware linux-headers<br></code></pre></td></tr></table></figure>
 
@@ -481,6 +485,10 @@
 
 
 
+<blockquote>
+<p><strong>注</strong>：</p>
+<p>在生成文件系统分区表后一定要查看是否生成，否则万一 boot 分区表没有写入 fstab 文件的话后续配置 Grub 可能会失败</p>
+</blockquote>
 <h1 id="三-配置系统"><a href="#三-配置系统" class="headerlink" title="三.配置系统"></a>三.配置系统</h1><p>第二章节的操作保证了 Arch Linux 基本系统的安装，我们还需要进入新安装的系统内部进行一些更细致的配置。通过 <code>arch-chroot</code> 进入新系统：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">arch-chroot /mnt<br></code></pre></td></tr></table></figure>
 
@@ -601,7 +609,7 @@
 
 
 <h2 id="3-7-重启系统"><a href="#3-7-重启系统" class="headerlink" title="3.7 重启系统"></a>3.7 重启系统</h2><p>至此 ArchLinux 的命令行安装方式到此结束。先退出 <code>arch-chroot</code> （exit 或者 quit 都可以），然后卸载挂载点。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">卸载引导分区</span><br>unmount /dev/sdb1<br><span class="hljs-meta prompt_"># </span><span class="language-bash">关闭交换分区</span><br>swapon /dev/sdb4<br><span class="hljs-meta prompt_"># </span><span class="language-bash">卸载根分区</span><br>unmount /dev/sdb5<br><span class="hljs-meta prompt_"># </span><span class="language-bash">挂载主目录分区</span><br>unmount /dev/sdb6<br><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看需要分区列表确定需要挂载的分区</span><br>lsblk -T<br><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">卸载引导分区</span><br>umount /dev/sdb1<br><span class="hljs-meta prompt_"># </span><span class="language-bash">关闭交换分区</span><br>swapoff /dev/sdb4<br><span class="hljs-meta prompt_"># </span><span class="language-bash">卸载根分区</span><br>umount /dev/sdb5<br><span class="hljs-meta prompt_"># </span><span class="language-bash">挂载主目录分区</span><br>umount /dev/sdb6<br><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看需要分区列表确定需要挂载的分区</span><br>lsblk -T<br><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span><br></code></pre></td></tr></table></figure>
 
 <p>在确认卸载挂载点完毕之后便可重新启动系统，注意重启屏幕点亮之前一定要拔掉 U 盘。</p>
 <h1 id="四-GNOME-桌面环境安装"><a href="#四-GNOME-桌面环境安装" class="headerlink" title="四.GNOME 桌面环境安装"></a>四.GNOME 桌面环境安装</h1><h2 id="4-1-Xorg-服务安装"><a href="#4-1-Xorg-服务安装" class="headerlink" title="4.1 Xorg 服务安装"></a>4.1 Xorg 服务安装</h2><p>由于 GNOME 桌面环境默认使用了 Wayland 的显示服务器协议。Wayland 采用了 Xwayland 子协议以兼容 X 协议。由于 Wayland 现阶段的兼容性问题，笔者还是采用了更传统的基于 X 协议的 Xorg 服务。具体安装也非常简单，仅需如下命令安装 Xorg 服务器端程序：</p>
