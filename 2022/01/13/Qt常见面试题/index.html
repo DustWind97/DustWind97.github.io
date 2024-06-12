@@ -18,15 +18,15 @@
   <meta name="author" content="DustWind">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1 在Qt多线程环境中，如何控制信号槽在哪个线程中执行通过connect方法的第五个参数可以控制信号槽执行所在线程。 connect有三种连接方式，直接连接、队列连接和自动连接  直接连接（Qt::DirectConnection）：信号槽在信号发出者所在的线程中执行  队列连接 (Qt::QueuedConnection)：信号在信号发出者所在的线程中执行，槽函数在信号接收者所在的线程中执行">
+    <meta name="description" content="引言本文根据 0voice大佬整理汇总 的内容进一步提炼总结而成。感谢 0voice 大佬汇总。 1 在Qt多线程环境中，如何控制信号槽在哪个线程中执行通过connect方法的第五个参数可以控制信号槽执行所在线程。 connect有三种连接方式，直接连接、队列连接和自动连接  直接连接（Qt::DirectConnection）：信号槽在信号发出者所在的线程中执行  队列连接 (Qt::Queue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Qt开发『概念理解』">
 <meta property="og:url" content="http://example.com/2022/01/13/Qt%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
 <meta property="og:site_name" content="二十七画生">
-<meta property="og:description" content="1 在Qt多线程环境中，如何控制信号槽在哪个线程中执行通过connect方法的第五个参数可以控制信号槽执行所在线程。 connect有三种连接方式，直接连接、队列连接和自动连接  直接连接（Qt::DirectConnection）：信号槽在信号发出者所在的线程中执行  队列连接 (Qt::QueuedConnection)：信号在信号发出者所在的线程中执行，槽函数在信号接收者所在的线程中执行">
+<meta property="og:description" content="引言本文根据 0voice大佬整理汇总 的内容进一步提炼总结而成。感谢 0voice 大佬汇总。 1 在Qt多线程环境中，如何控制信号槽在哪个线程中执行通过connect方法的第五个参数可以控制信号槽执行所在线程。 connect有三种连接方式，直接连接、队列连接和自动连接  直接连接（Qt::DirectConnection）：信号槽在信号发出者所在的线程中执行  队列连接 (Qt::Queue">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-13T07:30:12.000Z">
-<meta property="article:modified_time" content="2023-09-14T09:46:07.986Z">
+<meta property="article:modified_time" content="2024-06-12T08:52:23.841Z">
 <meta property="article:author" content="DustWind">
 <meta property="article:tag" content="C&#x2F;C++">
 <meta property="article:tag" content="Qt">
@@ -276,7 +276,8 @@
             
               <div class="markdown-body">
                 
-                <h2 id="1-在Qt多线程环境中，如何控制信号槽在哪个线程中执行"><a href="#1-在Qt多线程环境中，如何控制信号槽在哪个线程中执行" class="headerlink" title="1 在Qt多线程环境中，如何控制信号槽在哪个线程中执行"></a>1 在Qt多线程环境中，如何控制信号槽在哪个线程中执行</h2><p>通过connect方法的第五个参数可以控制信号槽执行所在线程。</p>
+                <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>本文根据 <a target="_blank" rel="noopener" href="https://github.com/0voice/qt_interview_reference">0voice大佬整理汇总</a> 的内容进一步提炼总结而成。感谢 0voice 大佬汇总。</p>
+<h2 id="1-在Qt多线程环境中，如何控制信号槽在哪个线程中执行"><a href="#1-在Qt多线程环境中，如何控制信号槽在哪个线程中执行" class="headerlink" title="1 在Qt多线程环境中，如何控制信号槽在哪个线程中执行"></a>1 在Qt多线程环境中，如何控制信号槽在哪个线程中执行</h2><p>通过connect方法的第五个参数可以控制信号槽执行所在线程。</p>
 <p>connect有三种连接方式，直接连接、队列连接和自动连接</p>
 <ul>
 <li><p>直接连接（Qt::DirectConnection）：信号槽在信号发出者所在的线程中执行</p>
