@@ -18,21 +18,22 @@
   <meta name="author" content="DustWind">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一.Windows 环境下安装 MySQL在 Windows 环境下安装 Redis 主要是借助 Visual Studio 的 MSVC 工具集进行开发。后续当然还是将工程迁移到 Linux 系统上最好。 下载安装包编译安装二.Linux 环境下安装 Redis2.1 安装服务端和客户端Linux的 Redis 库直接编译安装即可。ArchLinux 系统中安装 Redis 即可。  首先安装">
+    <meta name="description" content="ObsidianDocument一.介绍Obsidian 软件 PC 端以及手机端笔记同步 二.安装教程2.1 先期工作 在 Gitee 码云平台中新建一个远程仓库并初始化 ReadMe 文件，并且配置电脑端 SSH 公钥到 Gitee 中，具体可以参考：SSH 公钥设置   注：ed25519 算法和 rsa 算法区别  ed25519 算法，又名基于椭圆曲线密码学的现代数字签名算法 RSA 算">
 <meta property="og:type" content="article">
-<meta property="og:title" content="配置 Redis">
-<meta property="og:url" content="http://example.com/2025/10/20/%E9%85%8D%E7%BD%AE%20Redis/index.html">
+<meta property="og:title" content="Obsidian 多端同步">
+<meta property="og:url" content="http://example.com/2025/09/16/Obsidian%20%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5/index.html">
 <meta property="og:site_name" content="二十七画生">
-<meta property="og:description" content="一.Windows 环境下安装 MySQL在 Windows 环境下安装 Redis 主要是借助 Visual Studio 的 MSVC 工具集进行开发。后续当然还是将工程迁移到 Linux 系统上最好。 下载安装包编译安装二.Linux 环境下安装 Redis2.1 安装服务端和客户端Linux的 Redis 库直接编译安装即可。ArchLinux 系统中安装 Redis 即可。  首先安装">
+<meta property="og:description" content="ObsidianDocument一.介绍Obsidian 软件 PC 端以及手机端笔记同步 二.安装教程2.1 先期工作 在 Gitee 码云平台中新建一个远程仓库并初始化 ReadMe 文件，并且配置电脑端 SSH 公钥到 Gitee 中，具体可以参考：SSH 公钥设置   注：ed25519 算法和 rsa 算法区别  ed25519 算法，又名基于椭圆曲线密码学的现代数字签名算法 RSA 算">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-10-20T14:01:10.000Z">
-<meta property="article:modified_time" content="2025-11-06T12:40:05.022Z">
+<meta property="article:published_time" content="2025-09-16T13:19:49.000Z">
+<meta property="article:modified_time" content="2025-11-06T12:53:07.490Z">
 <meta property="article:author" content="DustWind">
+<meta property="article:tag" content="Obsidian">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>配置 Redis - 二十七画生</title>
+  <title>Obsidian 多端同步 - 二十七画生</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="配置 Redis"></span>
+            <span id="subtitle" data-typed-text="Obsidian 多端同步"></span>
           
         </div>
 
@@ -209,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-10-20 22:01" pubdate>
-          2025年10月20日 晚上
+        <time datetime="2025-09-16 21:19" pubdate>
+          2025年9月16日 晚上
         </time>
       </span>
     
@@ -221,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          1.2k 字
         
       </span>
     
@@ -232,7 +233,7 @@
         
         
         
-          17 分钟
+          11 分钟
         
       </span>
     
@@ -269,46 +270,50 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">配置 Redis</h1>
+            <h1 id="seo-header">Obsidian 多端同步</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="一-Windows-环境下安装-MySQL"><a href="#一-Windows-环境下安装-MySQL" class="headerlink" title="一.Windows 环境下安装 MySQL"></a>一.Windows 环境下安装 MySQL</h1><p>在 Windows 环境下安装 Redis 主要是借助 Visual Studio 的 MSVC 工具集进行开发。后续当然还是将工程迁移到 Linux 系统上最好。</p>
-<h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><h2 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h2><h1 id="二-Linux-环境下安装-Redis"><a href="#二-Linux-环境下安装-Redis" class="headerlink" title="二.Linux 环境下安装 Redis"></a>二.Linux 环境下安装 Redis</h1><h2 id="2-1-安装服务端和客户端"><a href="#2-1-安装服务端和客户端" class="headerlink" title="2.1 安装服务端和客户端"></a>2.1 安装服务端和客户端</h2><p>Linux的 Redis 库直接编译安装即可。ArchLinux 系统中安装 Redis 即可。</p>
+                <h1 id="ObsidianDocument"><a href="#ObsidianDocument" class="headerlink" title="ObsidianDocument"></a>ObsidianDocument</h1><h2 id="一-介绍"><a href="#一-介绍" class="headerlink" title="一.介绍"></a>一.介绍</h2><p>Obsidian 软件 PC 端以及手机端笔记同步</p>
+<h2 id="二-安装教程"><a href="#二-安装教程" class="headerlink" title="二.安装教程"></a>二.安装教程</h2><h3 id="2-1-先期工作"><a href="#2-1-先期工作" class="headerlink" title="2.1 先期工作"></a>2.1 先期工作</h3><ol>
+<li>在 Gitee 码云平台中新建一个远程仓库并初始化 ReadMe 文件，并且配置电脑端 SSH 公钥到 Gitee 中，具体可以参考：<a target="_blank" rel="noopener" href="https://help.gitee.com/base/account/SSH%E5%85%AC%E9%92%A5%E8%AE%BE%E7%BD%AE">SSH 公钥设置</a></li>
+</ol>
+<blockquote>
+<p><strong>注</strong>：<br>ed25519 算法和 rsa 算法区别</p>
 <ol>
-<li><p>首先安装 <code>redis</code> 服务端库：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pacman -S redis<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>然后启动服务并设置为开机自启</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">立即启动服务</span><br>sudo systemctl start redis<br><span class="hljs-meta prompt_"># </span><span class="language-bash">设置开机自启动</span><br>sudo systemctl enable redis<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>安装 <code>hiredis</code> 客户端库:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pacman -S hiredis<br></code></pre></td></tr></table></figure></li>
+<li>ed25519 算法，又名基于椭圆曲线密码学的现代数字签名算法</li>
+<li>RSA 算法，又名非对称加密算法，基于大数难分解难题原理</li>
+<li>ed25519 算法相较于 RSA 算法更敏捷，效率更高</li>
 </ol>
-<h2 id="2-2-测试与编译"><a href="#2-2-测试与编译" class="headerlink" title="2.2 测试与编译"></a>2.2 测试与编译</h2><h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><ol>
-<li><p>首先编写一段简单的测试代码，在合适的位置创建一个 <code>test_redis.cpp</code> 文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">创建测试文件</span><br>sudo touch test_redis.cpp<br><span class="hljs-meta prompt_"># </span><span class="language-bash">打开并编辑测试文件</span><br>sudo vim test_redis.cpp<br></code></pre></td></tr></table></figure>
+</blockquote>
+<ol start="2">
+<li>将创建的远程仓库拉取部署到本地方便后续操作[1]</li>
+</ol>
+<h3 id="2-2-电脑端配置"><a href="#2-2-电脑端配置" class="headerlink" title="2.2 电脑端配置"></a>2.2 电脑端配置</h3><ol>
+<li>安装 Git，参见博客[[搭建自己的 Hexo 博客#2.2 安装Git]]</li>
+<li>安装 Obsidian 软件（Windows版本）</li>
+<li>Obsidian 软件安装 Git 插件：进入设置，点击第三方插件选项，关闭安全模式，然后点击浏览插件市场，在其中搜索 Git 插件并安装</li>
+<li>配置 Git 插件，设置同步时间、开启自动拉取同步并设置提交作者和邮箱</li>
+<li>将从远程仓库拉取到本地的仓库导入到 Obsidian 中，后续的笔记都可以通过此文件夹推送到远程仓库中</li>
+</ol>
+<h3 id="2-3-手机端配置"><a href="#2-3-手机端配置" class="headerlink" title="2.3 手机端配置"></a>2.3 手机端配置</h3><ol>
+<li>安装 Obsidian 软件（安卓版本）</li>
+<li>将电脑端的笔记拷贝到手机上，然后导入到 Obsidian 中，</li>
+</ol>
+<h3 id="2-4-同步冲突设置"><a href="#2-4-同步冲突设置" class="headerlink" title="2.4 同步冲突设置"></a>2.4 同步冲突设置</h3><p>由于电脑端和手机端笔记文件夹文件类型差别原因，需要配置以消除同步冲突问题。</p>
+<ol>
+<li><p>在笔记文件夹创建一个 <code>.gitignore</code> 文件配置无需上传远程仓库的文件及文件夹， <code>.gitignore</code> 文件忽略的冲突文件及文件夹如下所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">忽略 Obsidian 缓存与临时文件</span><br>.obsidian/cache/<br><br>.obsidian/workspace.json<br><br>.obsidian/workspaces/<br><br>.obsidian/trash/<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">忽略插件生成的缓存数据（如 Git 插件历史记录）</span><br>.obsidian/plugins/obsidian-git/data.json   # [[1][5][11]()<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">忽略系统文件</span><br>.DS_Store<br>Thumbs.db<br>desktop.ini<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">忽略备份文件</span><br>*.bak<br>*.tmp<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">忽略附件文件夹（按需启用）</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">attachments/</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">特殊配置：保留核心插件配置（可选）</span><br>!.obsidian/plugins/  # 保留插件目录<br>!.obsidian/themes/   # 保留主题目录<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">Ignore Smart Environment folder</span><br>.smart-env<br>.obsidian/plugins/recent-files-obsidian/data.json<br>.obsidian/workspace-mobile.json<br>.trash/<br></code></pre></td></tr></table></figure>
 </li>
-<li><p>然后将下面代码粘贴进去：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;hiredis/hiredis.h&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-comment">// 连接Redis服务器</span><br>    redisContext *c = <span class="hljs-built_in">redisConnect</span>(<span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-number">6379</span>);<br>    <span class="hljs-keyword">if</span> (c == <span class="hljs-literal">NULL</span> || c-&gt;err) &#123;<br>        <span class="hljs-keyword">if</span> (c) &#123;<br>            std::cerr &lt;&lt; <span class="hljs-string">&quot;连接错误: &quot;</span> &lt;&lt; c-&gt;errstr &lt;&lt; std::endl;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            std::cerr &lt;&lt; <span class="hljs-string">&quot;无法分配redisContext。&quot;</span> &lt;&lt; std::endl;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;成功连接到Redis服务器&quot;</span> &lt;&lt; std::endl;<br><br>    <span class="hljs-comment">// 执行SET命令</span><br>    redisReply *reply = (redisReply *)<span class="hljs-built_in">redisCommand</span>(c, <span class="hljs-string">&quot;SET %s %s&quot;</span>, <span class="hljs-string">&quot;my_key&quot;</span>, <span class="hljs-string">&quot;Hello from C++!&quot;</span>);<br>    <span class="hljs-keyword">if</span> (reply == <span class="hljs-literal">NULL</span>) &#123;<br>        std::cerr &lt;&lt; <span class="hljs-string">&quot;执行SET命令失败。&quot;</span> &lt;&lt; std::endl;<br>        <span class="hljs-built_in">redisFree</span>(c);<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-built_in">freeReplyObject</span>(reply);<br><br>    <span class="hljs-comment">// 执行GET命令</span><br>    reply = (redisReply *)<span class="hljs-built_in">redisCommand</span>(c, <span class="hljs-string">&quot;GET %s&quot;</span>, <span class="hljs-string">&quot;my_key&quot;</span>);<br>    <span class="hljs-keyword">if</span> (reply == <span class="hljs-literal">NULL</span>) &#123;<br>        std::cerr &lt;&lt; <span class="hljs-string">&quot;执行GET命令失败。&quot;</span> &lt;&lt; std::endl;<br>        <span class="hljs-built_in">redisFree</span>(c);<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;获取到的值: &quot;</span> &lt;&lt; reply-&gt;str &lt;&lt; std::endl;<br>    <span class="hljs-built_in">freeReplyObject</span>(reply);<br><br>    <span class="hljs-comment">// 断开连接</span><br>    <span class="hljs-built_in">redisFree</span>(c);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>最后保存退出。</p>
+<li><p>保证双端同步，在笔记文件夹打开终端，输入如下命令消除同步冲突问题：</p>
 </li>
 </ol>
-<h3 id="编译运行"><a href="#编译运行" class="headerlink" title="编译运行"></a>编译运行</h3><p>在终端中编译并运行此测试示例：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">编译</span><br>g++ -o test_redis test_redis.cpp -lhiredis<br><span class="hljs-meta prompt_"># </span><span class="language-bash">运行</span><br>./test_redis<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git config core.fileMode false<br></code></pre></td></tr></table></figure>
 
-<p>示例结果如下所示：</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">成功连接到Redis服务器 <br>获取到的值: Hello <span class="hljs-keyword">from</span> C++!<br></code></pre></td></tr></table></figure>
-
-
-<h2 id="2-3-更多配置"><a href="#2-3-更多配置" class="headerlink" title="2.3 更多配置"></a>2.3 更多配置</h2><p>将远程连接，持久化，认证密码等配置写入配置文件。在 <code>/etc/redis.conf</code> 中即可配置相关项</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs config"># 1.远程连接，允许远程连接<br>bind 0.0.0.0<br># 开启保护模式，默认是yes（限制为本地访问），【这样做会降低安全性，请确保你的防火墙已正确配置】<br>protected-mode no<br><br># 2.持久化，开启之后Redis不会每次重启自动清空<br>appendonly yes<br><br># 3.认证密码，为Redis设置访问密码<br>requirepass ~K^S0Y^E+ijGkp_^<br></code></pre></td></tr></table></figure>
-
-
-<h1 id="三-Docker-环境下安装-Redis"><a href="#三-Docker-环境下安装-Redis" class="headerlink" title="三.Docker 环境下安装 Redis"></a>三.Docker 环境下安装 Redis</h1><p>将 Redis 部署到 Docker 环境中可以有效隔绝外部攻击，通过设置不同策略实现安全访问 Redis 服务。笔者在云服务器 Linux 系统上部署 Docker 环境，并在 Docker 环境中部署 Redis 实现远程访问 Redis 服务。</p>
-<p>具体安装流程可以参看 [[Docker 配置 Redis 和 MySQL]]</p>
+<blockquote>
+<p><strong>注：</strong><br>安卓和 Windows 文件夹权限不同，无需以管理员身份进行提权操作</p>
+</blockquote>
 
                 
               </div>
@@ -318,6 +323,13 @@
               <div class="post-metas my-3">
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Obsidian/" class="print-no-link">#Obsidian</a>
+      
+    </div>
+  
 </div>
 
 
@@ -326,8 +338,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>配置 Redis</div>
-      <div>http://example.com/2025/10/20/配置 Redis/</div>
+      <div>Obsidian 多端同步</div>
+      <div>http://example.com/2025/09/16/Obsidian 多端同步/</div>
     </div>
     <div class="license-meta">
       
@@ -339,7 +351,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年10月20日</div>
+          <div>2025年9月16日</div>
         </div>
       
       
@@ -371,9 +383,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/10/20/%E9%85%8D%E7%BD%AE%20MySQL/" title="配置 MySQL">
+                      <a href="/2025/10/20/%E9%85%8D%E7%BD%AE%20Redis/" title="配置 Redis">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">配置 MySQL</span>
+                        <span class="hidden-mobile">配置 Redis</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -381,8 +393,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/09/16/Obsidian%20%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5/" title="Obsidian 多端同步">
-                        <span class="hidden-mobile">Obsidian 多端同步</span>
+                      <a href="/2025/08/31/ElaWidgetTools%20%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" title="ElaWidgetTools 开源项目">
+                        <span class="hidden-mobile">ElaWidgetTools 开源项目</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
