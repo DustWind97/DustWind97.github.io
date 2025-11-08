@@ -1,314 +1,210 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="DustWind">
-  <meta name="keywords" content="">
-  
-    <meta name="description" content="前言Manjaro 是一个 Arch Linux 的发行版本 来自 Manjaro 社区的官方介绍： Manjaro is a versatile, free, and open-source Linux operating system designed with a strong focus on safeguarding user privacy and offering extensiv">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Manjaro 及常用软件安装配置">
-<meta property="og:url" content="http://example.com/2025/01/29/Manjaro%20%E5%8F%8A%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/index.html">
-<meta property="og:site_name" content="二十七画生">
-<meta property="og:description" content="前言Manjaro 是一个 Arch Linux 的发行版本 来自 Manjaro 社区的官方介绍： Manjaro is a versatile, free, and open-source Linux operating system designed with a strong focus on safeguarding user privacy and offering extensiv">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%87%86%E5%A4%87%E9%98%B6%E6%AE%B5/Manjaro%E4%B8%8B%E8%BD%BD%E9%A1%B5.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%87%86%E5%A4%87%E9%98%B6%E6%AE%B5/Rusfus%E5%86%99%E5%85%A5%E8%BD%AF%E4%BB%B6.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/1.%E9%80%89%E6%8B%A9%E9%A9%B1%E5%8A%A8%E7%B1%BB%E5%9E%8B.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/2.%E5%8A%A0%E8%BD%BD%E5%86%85%E6%A0%B8%E7%95%8C%E9%9D%A2.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/3.%E7%B3%BB%E7%BB%9FLogo%E7%95%8C%E9%9D%A2.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/4.%E7%B3%BB%E7%BB%9F%E6%AC%A2%E8%BF%8E%E9%A1%B5.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/5.%E8%BF%9B%E5%85%A5%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/6.%E9%80%89%E6%8B%A9%E5%9C%B0%E5%8C%BA.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/7.%E9%80%89%E6%8B%A9%E9%94%AE%E7%9B%98%E5%B8%83%E5%B1%80.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.0.%E9%80%89%E6%8B%A9%E5%88%86%E5%8C%BA%E6%96%B9%E5%BC%8F.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.1.%E6%A0%B9%E5%88%86%E5%8C%BA%E9%85%8D%E7%BD%AE.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.2.boot%E5%88%86%E5%8C%BA%E9%85%8D%E7%BD%AE.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/%E5%88%86%E5%8C%BA%E7%9A%84%E7%89%B9%E4%BE%8B/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%BC%95%E5%AF%BC%E6%8C%82%E8%BD%BD%E6%96%B9%E6%A1%881.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/%E5%88%86%E5%8C%BA%E7%9A%84%E7%89%B9%E4%BE%8B/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%BC%95%E5%AF%BC%E6%8C%82%E8%BD%BD%E6%96%B9%E6%A1%882.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.3.swap%E5%88%86%E5%8C%BA%E9%85%8D%E7%BD%AE.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.4.home%E5%88%86%E5%8C%BA%E9%85%8D%E7%BD%AE%EF%BC%88%E5%89%A9%E4%B8%8B%E5%85%A8%E9%83%A8%EF%BC%89.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.5.%E6%9C%80%E7%BB%88%E5%88%86%E5%8C%BA%E6%96%B9%E6%A1%88.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/9.%E8%AE%BE%E7%BD%AE%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%90%8D%E5%AD%97%E5%8F%8A%E5%AF%86%E7%A0%81.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/10.%E9%80%89%E6%8B%A9office%E5%8A%9E%E5%85%AC%E5%A5%97%E4%BB%B6.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/11.%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%91%98%E8%A6%81.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/12.%E5%AE%89%E8%A3%85%E6%8F%90%E7%A4%BA.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/13.%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E7%95%8C%E9%9D%A2.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/14.%E5%AE%89%E8%A3%85%E7%BB%93%E6%9D%9F.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E6%9B%B4%E6%96%B0%E6%BA%90/1.%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E6%9B%B4%E6%96%B0%E6%BA%90/2.%E9%80%89%E6%8B%A9%E5%B9%B6%E7%A1%AE%E5%AE%9A%E9%95%9C%E5%83%8F%E6%BA%90.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E6%9B%B4%E6%96%B0%E6%BA%90/4.%E5%8A%A0%E5%85%A5archlinuxcn%E5%92%8Carch4edu%E6%BA%90.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/%E6%90%9C%E7%8B%97%E6%8B%BC%E9%9F%B3%E5%AE%89%E8%A3%85.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Fcitx%E9%85%8D%E7%BD%AE%E6%90%9C%E7%8B%97%E6%8B%BC%E9%9F%B3%E8%BE%93%E5%85%A5%E6%B3%95.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E8%BD%AF%E4%BB%B6%E8%BD%AC%E5%8C%85.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85.png">
-<meta property="og:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86.png">
-<meta property="article:published_time" content="2025-01-29T14:00:40.000Z">
-<meta property="article:modified_time" content="2025-11-06T12:39:19.948Z">
-<meta property="article:author" content="DustWind">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="Manjaro">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%87%86%E5%A4%87%E9%98%B6%E6%AE%B5/Manjaro%E4%B8%8B%E8%BD%BD%E9%A1%B5.png">
-  
-  
-  
-  <title>Manjaro 及常用软件安装配置 - 二十七画生</title>
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Manjaro 及常用软件安装配置 | 二十七画生</title><meta name="keywords" content="Linux,Manjaro"><meta name="author" content="DustWind"><meta name="copyright" content="DustWind"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Manjaro 及常用软件安装配置"><meta name="application-name" content="Manjaro 及常用软件安装配置"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="Manjaro 及常用软件安装配置"><meta property="og:url" content="http://example.com/2025/01/29/Manjaro%20%E5%8F%8A%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/index.html"><meta property="og:site_name" content="二十七画生"><meta property="og:description" content="前言Manjaro 是一个 Arch Linux 的发行版本 来自 Manjaro 社区的官方介绍： Manjaro is a versatile, free, and open-source Linux operating system designed with a strong focus"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta property="article:author" content="DustWind"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta name="description" content="前言Manjaro 是一个 Arch Linux 的发行版本 来自 Manjaro 社区的官方介绍： Manjaro is a versatile, free, and open-source Linux operating system designed with a strong focus"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2025/01/29/Manjaro%20%E5%8F%8A%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2024/07/27/125766904/ba62475f396df9de3316a08ed9e65d86_5680958632268053399..png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: DustWind","link":"链接: ","source":"来源: 二十七画生","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
     }
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-  
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '二十七画生',
+  title: 'Manjaro 及常用软件安装配置',
+  postAI: '',
+  pageFillDescription: '前言, 一.Manjaro安装, 1.1 安装包及工具获取, 1.1.1 安装包获取, 1.1.2 写入工具选择, 1.2 写入盘制作, 1.3 安装步骤, 1.3.1 语言及驱动选择, 1.3.2 载入内核与系统界面, 1.3.3 系统欢迎页, 1.3.4 进入系统安装页, 1.3.5 地区及键盘布局, 1.3.6 系统分区, 1.3.7 用户名及密码设置, 1.3.8 Office套件, 1.3.9 开始系统安装, 二.系统换源, 2.1 获取源列表并更换官方源, 2.1.1 方式一：通过命令行, 2.1.2 方式二：通过配置文件, 2.2 Arch Linux CN 源更换, 三.常用软件安装, 3.1 输入法安装, 3.1.1 Fcitx5 输入法安装, 3.1.2 Fcitx 输入法安装, 3.1.3 搜狗输入法安装, 3.1.4 搜狗输入法安装导致问题, 3.2 回滚工具安装, 3.3 Chrome 浏览器安装, 3.4 Clash 软件安装, 3.4.1 Clash for Windows, 3.4.2 Clash Verge, 3.5 QQ 安装, 3.6 微信安装, 3.7 腾讯会议安装, 3.8 QQ音乐安装, 3.9 顶部栏隐藏, 3.10 WPS Office 套件安装, 3.11 GitHub Desktop 安装, 3.12 笔记软件前言是一个的发行版本来自社区的官方介绍一安装安装包及工具获取安装包获取访问官网的下载页可以看到官方提供了三种桌面版本的系统以及是一种桌面环境其功能完善自定义程度较高对于硬件资源消耗较大是一种轻量级的桌面环境其界面美观对用户友好它是由语言编写而成依赖于对资源消耗较小是一款的桌面环境系统的默认桌面环境对于资源消耗适中笔者曾使用系统比较喜欢的桌面环境因此笔者选择版本写入工具选择当前市面上有许多盘烧录工具如等写入盘制作笔者采用软件写入文件到盘打开软件之后默认会选择盘然后在引导类型选择栏选择需要安装的镜像文件然后点击开始按钮进行烧录安装步骤将写入系统镜像的盘插到待安装系统的电脑上开机选择盘启动项开始安装语言及驱动选择进入驱动选择界面将地区项选择为中国上海语言项设置为中文然后驱动选择项并回车注图中第一项为开源驱动图中第二项为闭源驱动由于笔者是英伟达显卡故选择第二项进行安装载入内核与系统界面回车安装之后会载入内核界面成功之后便会显示系统界面系统欢迎页进入系统欢迎页将语言选择为简体中文然后点击启动安装程序按钮开始安装进入系统安装页进入系统安装页点击下一步正式开始安装地区及键盘布局在系统安装页将地区设置为亚洲上海然后点击下一步键盘布局选择默认布局然后点击下一步系统分区这一步非常关键分区不正确将影响系统安装此时出现两个选项我们选择手动分区然后点击下一步进入到分区具体流程笔者的分区如下表所述进行大小文件系统挂载点标记备注根目录用于存放系统文件或者引导分区系统启动相关无挂载点交换分区一般与内存大小相同无标记存储变量无标记家目录用于存放用户数据注几个分区的具体介绍分区大小通常为根分区是最重要而且必需的需要最先挂载因为包括目录根据安装的软件数量会产生非常明显的增长分区大小通常为引导分区包含内核镜像以及配置文件和它也可以存放内核在执行用户态程序之前所使用的其他数据在日常系统运行中并不需要只在启动和内核升级包括重建的时候用到如果使用软条带化系统的话必须有一个独立的分区不使用时引导分区大小建议为使用时需要至少空间分区大小通常为内存的大小分区将目录独立使得分区可以单独重新划分但是请注意你可以在没有独立分区的情况下你仍然可以在不修改目录内容的情况下重装删除其他顶级目录然后执行不能与使用其他发行版的用户共享同一个目录因为不同的发行版可能使用不兼容的软件版本和补丁可以共享媒体目录或至少使用分区下的不同目录分区大小跟着存储的内容而定分区存储变量数据例如目录和文件管理和登录数据它通常被用作缓存或者日志记录因此读写频繁将它独立出来可以避免由于大量日志写入造成的磁盘空间耗尽等问题除了其他数据以外还包括树和缓存保留缓存的包提供了包降级的能力因此非常有用也正因为这样的大小会随着时间推移而增长尤其是缓存将会随着新软件的安装系统的升级而增长在磁盘空间不足的时候可以安全的清理这个目录分配对于桌面系统来说是比较合适的取值具体取值取决于安装的软件数量根目录引导分区或者当进行单系统安装时直接挂载引导分区当进行双系统安装时则需要将挂载到的引导分区上注意配置分区的时候选择保留分区而别格式化分区注手动挂载分区的方法可以参考如下文章手动挂载分区交换分区家目录最终生成的分区方案用户名及密码设置在系统安装页的用户名界面输入自己的登录用户名并设置它对应的用户密码如果嫌用户密码和管理员密码分别设置很麻烦就勾选为管理员账号使用同样的密码然后点击下一步套件在系统安装页提供了多种套件以供选择笔者选择的是如果这几种都不喜欢可以跳过自行安装开始系统安装套件选择完毕后点击下一步便开始系统安装此时会生成一个系统安装的摘要显示之后点击安装此时会弹出一个消息框选择现在安装继续进行系统开始安装点击进度条右边的小红点可以查看系统安装详细信息系统安装完毕勾选现在重启然后重启系统便可以正常使用了二系统换源为了保证系统下载软件的流畅性通常需要将软件源更改为国内高校或者阿里腾讯等互联网大厂的软件镜像源以下部分将介绍镜像源配置流程获取源列表并更换官方源获取方式可以通过命令行方式选取镜像源或者直接更改配置文件方式一通过命令行执行如下命令出现镜像源复选框在弹出的复选框中选择自己所需的镜像源并点击确认生效镜像源生效之后会将配置写入到文件当中最后执行如下命令更新软件与系统方式二通过配置文件首先打开配置文件打开镜像配置文件找到关键字并在这一区域附近添加需要的镜像站链接添加开源镜像站链接中国科学技术大学重庆邮电大学重庆大学南方科技大学北京外国语大学华为镜像站阿里云镜像站最后执行如下命令更新软件与系统源更换在更换源时将的源也更换一下使用程序命令访问配置文件然后在文件末尾添加如下内容并保存中国科学技术大学重庆邮电大学重庆大学南方科技大学华中科技大学北京外国语大学阿里源源阿里源最后执行如下命令更新软件与系统三常用软件安装输入法安装笔者在系统上多年都是使用的搜狗输入法但是由于版本的更新搜狗官方并未在下推出新架构的搜狗拼音输入法因此笔者选择安装输入法并配置相应的环境当然本节也会提供框架下搜狗输入法的安装注两种输入法安装的步骤都是框架具体输入法的形式进行和两种框架都提供基本的输入法输入法安装是一个输入法框架它具有轻量级内核并通过提供额外的语言支持接替依赖安装安装输入法首先需要下载的依赖包通过如下命令安装这些依赖包由于之前装过所以需先卸载本体集成了配置工具对程序软件的支持集成和依赖库单独集成依赖库单独集成依赖库单独集成依赖库对于程序的支持对于中文相关的例如拼音双拼和五笔的第三方主题库对桌面环境的支持对日期时间的支持通常想要运行的输入法环境只需要安装即可如果有更多定制化操作可视情况而定环境配置访问文件并将如下内容追加到文件末尾然后注销登陆重启输入法或者重启系统即可如果想要添加词库可运行配置软件对拼音输入法进行配置输入法安装安装搜狗输入法首先需要下载的依赖包通过如下命令安装这些依赖包然后访问文件并在末尾追加如下内容注本文是对文件进行的操作也可以对文件进行上述相同的操作如果不进行环境的配置那么重启之后不能正常切换输入法也就不能输入中文下面对几个环境变量配置文件进行简单介绍每次终端登录时读取每次终端登录时读取每次启动服务时读取每次使用等图形登录管理器时读取在所有用户登陆时都有效搜狗输入法安装提供了和两个版本的输入法笔者采用的是这一版本下面正式开始搜狗输入法安装然后通过从上给拉取软件包链接到本地然后进入项目文件夹直接开始构建安装软件包此时会出现如下图所示的错误这一错误会导致需要安装的包下载失败从而导致整个安装过程的失败为了避免此错误笔者采用的方式是从搜狗拼音输入法官网下载包放到此项目文件夹中然后使用文件构建安装软件包不出意外的话搜狗拼音输入法就安装完毕了最后重启系统然后在配置软件中将搜狗拼音输入法添加为第二输入法这样就可以正常使用了搜狗输入法安装导致问题笔者安装了搜狗输入法进而导致了系统关机以及系统重启时会服务关闭异常而将搜狗输入法卸载之后一切恢复到正常解决此问题的思路启用服务关机出现问题时使用进入调试命令行使用命令查看正在运行的服务此时发现了仍在运行使用命令继续查看服务此时便定位到了服务下的子服务仍然在运行回滚工具安装使用如下命令可以安装回滚工具浏览器安装使用如下命令可以安装谷歌浏览器软件安装来自官网的介绍是代理工具在系统的唯一图形客户端同时还支持三大系统功能强大且支持多种代理协议如等代理协议由于不知名原因的作者已在上删库跑路最终版本停在了版本首先下载软件的软件包在上有许多备份包可供下载这里不再赘述然后通过命令将软件的包转换包格式详细如下截图所示打包完成后会生成一个的软件包然后通过命令进行本地安装想要正常使用还需要设置系统网络代理下图展示的是笔者的代理参数注这里的端口对应的是软件界面上栏目的端口号想正常科学上网还需要相应的订阅节点网上有很多免费节点可用这里便不再展开如果设置了开机自动启动而不想在桌面显示可以在软件设置中开启静默启动选项至此的版本便安装完毕除了使用之外你还可以选择使用基于的软件具体的安装可采用如下命令注装完打不开前端面板疑似卡最新闭源驱动不支持硬件渲染解决的办法是在配置文件中添加环境变量安装近年来随着国产发行版的兴起也顺应时代通过技术对原先的腾讯进行改造并至今发布多个版本可以通过以下命令进行安装微信安装近期腾讯公司推出了运行在国产发行版系统上的版微信此版本一经推出受到广大用户及开发者的关注上的大佬通过打包将这一安装包发布在仓库笔者也第一时间去安装体验了这一版本具体安装如下指令所示腾讯会议安装腾讯会议可在官网下载各种架构的版本下载包自行打包也可以当然也可以在上获取相应的软件安装包笔者习惯在上获取软件具体命令如下音乐安装在社区可以看到大佬有两个版本的音乐软件包版本对应的名称为版本对应的名称为在这里笔者使用了更高版本的具体安装参照如下命令顶部栏隐藏此插件的功能是当应用最大化时能自动隐藏顶部栏此软件通过安装即可套件安装使用如下命令即可安装套件软件本体国际版的中文语言包的符号依赖包注开始安装会报错需要先安装文件库文件安装完毕后依然无法使用软件需安装库文件更多问题可参考安装在上有相应的包这里可以通过如下命令安装上有许多版本这里选用的是中文版如果使用原生的英文版可用如下指令安装笔记软件由于并不支持众多系统所以可以使用或者是软件平替当然如果需要书写格式笔记更加流畅的体验可以安装软件软件安装软件安装本软件在中暂时没有收录且无包提供仅提供了格式的软件包因此笔者的此软件就是通过包安装的这里附上此软件的软件包链接软件安装此软件是对于的国产软件替代笔者也相当推荐使用此软件此处有三个软件安装',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-11-06 20:39:19',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-
-  
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-
-<body>
-  
-
-  <header>
-    
-
-<div class="header-inner" style="height: 70vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>二十七画生</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                <span>首页</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>归档</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>标签</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                <span>关于</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/links/">
-                <i class="iconfont icon-link-fill"></i>
-                <span>友链</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="Manjaro 及常用软件安装配置"></span>
-          
-        </div>
-
-        
-          
-  <div class="mt-3">
-    
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-29 22:00" pubdate>
-          2025年1月29日 晚上
-        </time>
-      </span>
-    
-  </div>
-
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          11k 字
-        
-      </span>
-    
-
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          89 分钟
-        
-      </span>
-    
-
-    
-    
-  </div>
-
-
-        
-      </div>
-
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
       
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </header>
-
-  <main>
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
     
-      
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
 
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
 
-    </div>
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
 
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <h1 id="seo-header">Manjaro 及常用软件安装配置</h1>
-            
-            
-              <div class="markdown-body">
-                
-                <hr>
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">二十七画生</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Arch/" style="font-size: 1.05rem;">Arch<sup>1</sup></a><a href="/tags/C-CPP/" style="font-size: 1.05rem;">C/CPP<sup>4</sup></a><a href="/tags/CPP/" style="font-size: 1.05rem;">CPP<sup>1</sup></a><a href="/tags/Desktop-Entry/" style="font-size: 1.05rem;">Desktop Entry<sup>1</sup></a><a href="/tags/Docker/" style="font-size: 1.05rem;">Docker<sup>2</sup></a><a href="/tags/GNOME/" style="font-size: 1.05rem;">GNOME<sup>1</sup></a><a href="/tags/Git/" style="font-size: 1.05rem;">Git<sup>1</sup></a><a href="/tags/Hello-World/" style="font-size: 1.05rem;">Hello World<sup>1</sup></a><a href="/tags/Hexo/" style="font-size: 1.05rem;">Hexo<sup>1</sup></a><a href="/tags/JDK/" style="font-size: 1.05rem;">JDK<sup>1</sup></a><a href="/tags/Java/" style="font-size: 1.05rem;">Java<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>7</sup></a><a href="/tags/Manjaro/" style="font-size: 1.05rem;">Manjaro<sup>4</sup></a><a href="/tags/Markdown/" style="font-size: 1.05rem;">Markdown<sup>1</sup></a><a href="/tags/MySQL/" style="font-size: 1.05rem;">MySQL<sup>3</sup></a><a href="/tags/Obsidian/" style="font-size: 1.05rem;">Obsidian<sup>2</sup></a><a href="/tags/ProtoBuf/" style="font-size: 1.05rem;">ProtoBuf<sup>1</sup></a><a href="/tags/Qt/" style="font-size: 1.05rem;">Qt<sup>3</sup></a><a href="/tags/Redis/" style="font-size: 1.05rem;">Redis<sup>2</sup></a><a href="/tags/STL/" style="font-size: 1.05rem;">STL<sup>1</sup></a><a href="/tags/UML/" style="font-size: 1.05rem;">UML<sup>1</sup></a><a href="/tags/VS/" style="font-size: 1.05rem;">VS<sup>1</sup></a><a href="/tags/WSL/" style="font-size: 1.05rem;">WSL<sup>1</sup></a><a href="/tags/Windows/" style="font-size: 1.05rem;">Windows<sup>1</sup></a><a href="/tags/classDiagram/" style="font-size: 1.05rem;">classDiagram<sup>1</sup></a><a href="/tags/gRPC/" style="font-size: 1.05rem;">gRPC<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/11/"><span class="card-archive-list-date">十一月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/10/"><span class="card-archive-list-date">十月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/09/"><span class="card-archive-list-date">九月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/08/"><span class="card-archive-list-date">八月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/04/"><span class="card-archive-list-date">四月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/01/"><span class="card-archive-list-date">一月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Linux/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Linux</span></a><a class="article-meta__tags" href="/tags/Manjaro/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Manjaro</span></a></span></div></div><h1 class="post-title" itemprop="name headline">Manjaro 及常用软件安装配置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-01-29T14:00:40.000Z" title="发表于 2025-01-29 22:00:40">2025-01-29</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2025-11-06T12:39:19.948Z" title="更新于 2025-11-06 20:39:19">2025-11-06</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2025/01/29/Manjaro%20%E5%8F%8A%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"><header><a href="/tags/Linux/" tabindex="-1" itemprop="url">Linux</a><a href="/tags/Manjaro/" tabindex="-1" itemprop="url">Manjaro</a><h1 id="CrawlerTitle" itemprop="name headline">Manjaro 及常用软件安装配置</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">DustWind</span><time itemprop="dateCreated datePublished" datetime="2025-01-29T14:00:40.000Z" title="发表于 2025-01-29 22:00:40">2025-01-29</time><time itemprop="dateCreated datePublished" datetime="2025-11-06T12:39:19.948Z" title="更新于 2025-11-06 20:39:19">2025-11-06</time></header><hr>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Manjaro 是一个 Arch Linux 的发行版本</p>
 <p>来自 Manjaro 社区的官方介绍：</p>
 <p>Manjaro is a versatile, free, and open-source Linux operating system designed with a strong focus on safeguarding user privacy and offering extensive control over hardware. This user-friendly OS is an excellent choice for those who seek a fresh computing experience, as it can be seamlessly installed on a diverse array of devices. With support for both x86-64 and ARM architectures, Manjaro stands as an ideal option for any device or computing environment. Furthermore, Manjaro provides an array of customization options and a rich selection of applications, all while prioritizing security and privacy features. To cater to a wide audience.</p>
@@ -319,20 +215,20 @@
 <li>GNOME：是一款GNU的桌面环境，Ubuntu 系统的默认桌面环境。对于资源消耗适中。</li>
 </ol>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%87%86%E5%A4%87%E9%98%B6%E6%AE%B5/Manjaro%E4%B8%8B%E8%BD%BD%E9%A1%B5.png" srcset="/img/loading.gif" lazyload alt="Manjaro下载页"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%87%86%E5%A4%87%E9%98%B6%E6%AE%B5/Manjaro%E4%B8%8B%E8%BD%BD%E9%A1%B5.png" alt="Manjaro下载页"  />
 </div>
 
 <p>笔者曾使用 Ubuntu 系统，比较喜欢GNOME的桌面环境，因此笔者选择 GNOME Desktop 版本。</p>
 <h3 id="1-1-2-写入工具选择"><a href="#1-1-2-写入工具选择" class="headerlink" title="1.1.2 写入工具选择"></a>1.1.2 写入工具选择</h3><p>当前市面上有许多U盘烧录工具，如Rufus、USBWriter、Ventoy等。</p>
 <h2 id="1-2-写入盘制作"><a href="#1-2-写入盘制作" class="headerlink" title="1.2 写入盘制作"></a>1.2 写入盘制作</h2><p>笔者采用 Rufus 软件写入文件到U盘。打开 Rufus 软件之后默认会选择U盘，然后在引导类型选择栏选择需要安装的 Manjaro 镜像文件。然后点击开始按钮进行烧录。</p>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%87%86%E5%A4%87%E9%98%B6%E6%AE%B5/Rusfus%E5%86%99%E5%85%A5%E8%BD%AF%E4%BB%B6.png" srcset="/img/loading.gif" lazyload alt="Rufus写入软件"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%87%86%E5%A4%87%E9%98%B6%E6%AE%B5/Rusfus%E5%86%99%E5%85%A5%E8%BD%AF%E4%BB%B6.png" alt="Rufus写入软件"  />
 </div>
 
 <h2 id="1-3-安装步骤"><a href="#1-3-安装步骤" class="headerlink" title="1.3 安装步骤"></a>1.3 安装步骤</h2><p>将写入系统镜像的U盘插到待安装系统的电脑上。开机选择U盘启动项开始安装</p>
 <h3 id="1-3-1-语言及驱动选择"><a href="#1-3-1-语言及驱动选择" class="headerlink" title="1.3.1 语言及驱动选择"></a>1.3.1 语言及驱动选择</h3><p>进入驱动选择界面，将地区（tz 项）选择为中国上海，语言（lang 项）设置为中文，然后驱动选择<Boot with proprietary drivers> 项并回车。</p>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/1.%E9%80%89%E6%8B%A9%E9%A9%B1%E5%8A%A8%E7%B1%BB%E5%9E%8B.png" srcset="/img/loading.gif" lazyload alt="选择驱动类型"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/1.%E9%80%89%E6%8B%A9%E9%A9%B1%E5%8A%A8%E7%B1%BB%E5%9E%8B.png" alt="选择驱动类型"  />
 </div>
 
 <blockquote>
@@ -345,45 +241,45 @@
 <li>回车安装之后会载入内核界面</li>
 </ul>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/2.%E5%8A%A0%E8%BD%BD%E5%86%85%E6%A0%B8%E7%95%8C%E9%9D%A2.png" srcset="/img/loading.gif" lazyload alt="载入内核界面"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/2.%E5%8A%A0%E8%BD%BD%E5%86%85%E6%A0%B8%E7%95%8C%E9%9D%A2.png" alt="载入内核界面"  />
 </div>
 
 <ul>
 <li>成功之后便会显示系统 Logo 界面</li>
 </ul>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/3.%E7%B3%BB%E7%BB%9FLogo%E7%95%8C%E9%9D%A2.png" srcset="/img/loading.gif" lazyload alt="系统Logo界面"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/3.%E7%B3%BB%E7%BB%9FLogo%E7%95%8C%E9%9D%A2.png" alt="系统Logo界面"  />
 </div>
 
 <h3 id="1-3-3-系统欢迎页"><a href="#1-3-3-系统欢迎页" class="headerlink" title="1.3.3 系统欢迎页"></a>1.3.3 系统欢迎页</h3><p>进入系统欢迎页。将语言选择为 <code>简体中文</code>，然后点击启动安装程序按钮开始安装。</p>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/4.%E7%B3%BB%E7%BB%9F%E6%AC%A2%E8%BF%8E%E9%A1%B5.png" srcset="/img/loading.gif" lazyload alt="系统欢迎页"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/4.%E7%B3%BB%E7%BB%9F%E6%AC%A2%E8%BF%8E%E9%A1%B5.png" alt="系统欢迎页"  />
 </div>
 
 <h3 id="1-3-4-进入系统安装页"><a href="#1-3-4-进入系统安装页" class="headerlink" title="1.3.4 进入系统安装页"></a>1.3.4 进入系统安装页</h3><p>进入系统安装页，点击下一步正式开始安装</p>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/5.%E8%BF%9B%E5%85%A5%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F.png" srcset="/img/loading.gif" lazyload alt="进入系统安装页"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/5.%E8%BF%9B%E5%85%A5%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F.png" alt="进入系统安装页"  />
 </div>
 
 <h3 id="1-3-5-地区及键盘布局"><a href="#1-3-5-地区及键盘布局" class="headerlink" title="1.3.5 地区及键盘布局"></a>1.3.5 地区及键盘布局</h3><ul>
 <li>在系统安装页将地区设置为 <code>亚洲/上海</code>，然后点击下一步。</li>
 </ul>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/6.%E9%80%89%E6%8B%A9%E5%9C%B0%E5%8C%BA.png" srcset="/img/loading.gif" lazyload alt="地区选择"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/6.%E9%80%89%E6%8B%A9%E5%9C%B0%E5%8C%BA.png" alt="地区选择"  />
 </div>
 
 <ul>
 <li>键盘布局选择默认布局，然后点击下一步。</li>
 </ul>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/7.%E9%80%89%E6%8B%A9%E9%94%AE%E7%9B%98%E5%B8%83%E5%B1%80.png" srcset="/img/loading.gif" lazyload alt="键盘方式选择"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/7.%E9%80%89%E6%8B%A9%E9%94%AE%E7%9B%98%E5%B8%83%E5%B1%80.png" alt="键盘方式选择"  />
 </div>
 
 
 
 <h3 id="1-3-6-系统分区"><a href="#1-3-6-系统分区" class="headerlink" title="1.3.6 系统分区"></a>1.3.6 系统分区</h3><p>这一步非常关键，分区不正确将影响系统安装。此时出现两个选项，我们选择手动分区，然后点击下一步。</p>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.0.%E9%80%89%E6%8B%A9%E5%88%86%E5%8C%BA%E6%96%B9%E5%BC%8F.png" srcset="/img/loading.gif" lazyload alt="分区方式选择"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.0.%E9%80%89%E6%8B%A9%E5%88%86%E5%8C%BA%E6%96%B9%E5%BC%8F.png" alt="分区方式选择"  />
 </div>
 
 
@@ -449,7 +345,7 @@
 <li>根目录（&#x2F;）</li>
 </ol>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.1.%E6%A0%B9%E5%88%86%E5%8C%BA%E9%85%8D%E7%BD%AE.png" srcset="/img/loading.gif" lazyload alt="根分区配置"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.1.%E6%A0%B9%E5%88%86%E5%8C%BA%E9%85%8D%E7%BD%AE.png" alt="根分区配置"  />
 </div>
 
 
@@ -461,7 +357,7 @@
 <li>当进行单系统（Manjaro）安装时，直接挂载 &#x2F;boot 引导分区</li>
 </ul>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.2.boot%E5%88%86%E5%8C%BA%E9%85%8D%E7%BD%AE.png" srcset="/img/loading.gif" lazyload alt="单系统安装Boot分区配置"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.2.boot%E5%88%86%E5%8C%BA%E9%85%8D%E7%BD%AE.png" alt="单系统安装Boot分区配置"  />
 </div>
 
 
@@ -470,11 +366,11 @@
 <li>当进行双系统（Windows+Manjaro）安装时，则需要将 &#x2F;boot&#x2F;efi 挂载到 Windows 的 ESP 引导分区上。注意配置 ESP 分区的时候选择保留分区而别格式化分区。</li>
 </ul>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/%E5%88%86%E5%8C%BA%E7%9A%84%E7%89%B9%E4%BE%8B/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%BC%95%E5%AF%BC%E6%8C%82%E8%BD%BD%E6%96%B9%E6%A1%881.png" srcset="/img/loading.gif" lazyload alt="双系统安装Boot分区配置"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/%E5%88%86%E5%8C%BA%E7%9A%84%E7%89%B9%E4%BE%8B/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%BC%95%E5%AF%BC%E6%8C%82%E8%BD%BD%E6%96%B9%E6%A1%881.png" alt="双系统安装Boot分区配置"  />
 </div>
 
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/%E5%88%86%E5%8C%BA%E7%9A%84%E7%89%B9%E4%BE%8B/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%BC%95%E5%AF%BC%E6%8C%82%E8%BD%BD%E6%96%B9%E6%A1%882.png" srcset="/img/loading.gif" lazyload alt="双系统安装Boot分区配置"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/%E5%88%86%E5%8C%BA%E7%9A%84%E7%89%B9%E4%BE%8B/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%BC%95%E5%AF%BC%E6%8C%82%E8%BD%BD%E6%96%B9%E6%A1%882.png" alt="双系统安装Boot分区配置"  />
 </div>
 
 <blockquote>
@@ -485,7 +381,7 @@
 <li>交换分区（linuxswap）</li>
 </ol>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.3.swap%E5%88%86%E5%8C%BA%E9%85%8D%E7%BD%AE.png" srcset="/img/loading.gif" lazyload alt="交换分区配置"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.3.swap%E5%88%86%E5%8C%BA%E9%85%8D%E7%BD%AE.png" alt="交换分区配置"  />
 </div>
 
 
@@ -494,7 +390,7 @@
 <li>家目录（&#x2F;home）</li>
 </ol>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.4.home%E5%88%86%E5%8C%BA%E9%85%8D%E7%BD%AE%EF%BC%88%E5%89%A9%E4%B8%8B%E5%85%A8%E9%83%A8%EF%BC%89.png" srcset="/img/loading.gif" lazyload alt="home分区配置"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.4.home%E5%88%86%E5%8C%BA%E9%85%8D%E7%BD%AE%EF%BC%88%E5%89%A9%E4%B8%8B%E5%85%A8%E9%83%A8%EF%BC%89.png" alt="home分区配置"  />
 </div>
 
 
@@ -503,27 +399,27 @@
 <li>最终生成的分区方案</li>
 </ol>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.5.%E6%9C%80%E7%BB%88%E5%88%86%E5%8C%BA%E6%96%B9%E6%A1%88.png" srcset="/img/loading.gif" lazyload alt="最终分区方案"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/8.5.%E6%9C%80%E7%BB%88%E5%88%86%E5%8C%BA%E6%96%B9%E6%A1%88.png" alt="最终分区方案"  />
 </div>
 
 
 
 <h3 id="1-3-7-用户名及密码设置"><a href="#1-3-7-用户名及密码设置" class="headerlink" title="1.3.7 用户名及密码设置"></a>1.3.7 用户名及密码设置</h3><p>在系统安装页的用户名界面输入自己的登录用户名并设置它对应的用户密码。如果嫌用户密码和管理员密码分别设置很麻烦就勾选 <code>&lt;为管理员账号使用同样的密码&gt;</code>。然后点击下一步。</p>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/9.%E8%AE%BE%E7%BD%AE%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%90%8D%E5%AD%97%E5%8F%8A%E5%AF%86%E7%A0%81.png" srcset="/img/loading.gif" lazyload alt="用户名及密码"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/9.%E8%AE%BE%E7%BD%AE%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%90%8D%E5%AD%97%E5%8F%8A%E5%AF%86%E7%A0%81.png" alt="用户名及密码"  />
 </div>
 
 
 <h3 id="1-3-8-Office套件"><a href="#1-3-8-Office套件" class="headerlink" title="1.3.8 Office套件"></a>1.3.8 Office套件</h3><p>在系统安装页，Manjaro 提供了多种 Office 套件以供选择，笔者选择的是 LibreOffice。如果这几种都不喜欢可以跳过自行安装 WPS 。</p>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/10.%E9%80%89%E6%8B%A9office%E5%8A%9E%E5%85%AC%E5%A5%97%E4%BB%B6.png" srcset="/img/loading.gif" lazyload alt="Office套件选择"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/10.%E9%80%89%E6%8B%A9office%E5%8A%9E%E5%85%AC%E5%A5%97%E4%BB%B6.png" alt="Office套件选择"  />
 </div>
 
 <h3 id="1-3-9-开始系统安装"><a href="#1-3-9-开始系统安装" class="headerlink" title="1.3.9 开始系统安装"></a>1.3.9 开始系统安装</h3><ul>
 <li>Office 套件选择完毕后点击下一步便开始系统安装，此时会生成一个系统安装的摘要，显示之后点击安装。</li>
 </ul>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/11.%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%91%98%E8%A6%81.png" srcset="/img/loading.gif" lazyload alt="系统安装摘要"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/11.%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%91%98%E8%A6%81.png" alt="系统安装摘要"  />
 </div>
 
 
@@ -532,7 +428,7 @@
 <li>此时会弹出一个消息框，选择现在安装继续进行</li>
 </ul>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/12.%E5%AE%89%E8%A3%85%E6%8F%90%E7%A4%BA.png" srcset="/img/loading.gif" lazyload alt="安装提示"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/12.%E5%AE%89%E8%A3%85%E6%8F%90%E7%A4%BA.png" alt="安装提示"  />
 </div>
 
 
@@ -541,7 +437,7 @@
 <li>系统开始安装，点击进度条右边的小红点可以查看系统安装详细信息</li>
 </ul>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/13.%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E7%95%8C%E9%9D%A2.png" srcset="/img/loading.gif" lazyload alt="开始系统安装"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/13.%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E7%95%8C%E9%9D%A2.png" alt="开始系统安装"  />
 </div>
 
 
@@ -550,7 +446,7 @@
 <li>系统安装完毕，勾选现在重启然后重启系统便可以正常使用了。</li>
 </ul>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/14.%E5%AE%89%E8%A3%85%E7%BB%93%E6%9D%9F.png" srcset="/img/loading.gif" lazyload alt="系统安装完毕"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E5%AE%89%E8%A3%85%E9%98%B6%E6%AE%B5/14.%E5%AE%89%E8%A3%85%E7%BB%93%E6%9D%9F.png" alt="系统安装完毕"  />
 </div>
 
 
@@ -559,45 +455,45 @@
 <h3 id="2-1-1-方式一：通过命令行"><a href="#2-1-1-方式一：通过命令行" class="headerlink" title="2.1.1 方式一：通过命令行"></a>2.1.1 方式一：通过命令行</h3><ol>
 <li>执行如下命令出现镜像源复选框：</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pacman-mirrors -c China -i -m rank<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -c China -i -m rank</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>在弹出的复选框中选择自己所需的镜像源并点击确认生效。</li>
 </ol>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E6%9B%B4%E6%96%B0%E6%BA%90/1.%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4.png" srcset="/img/loading.gif" lazyload alt="选择镜像源"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E6%9B%B4%E6%96%B0%E6%BA%90/1.%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4.png" alt="选择镜像源"  />
 </div>
 
 <ol start="3">
 <li>镜像源生效之后会将配置写入到 &#96;&#96;&#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist&#96; 文件当中。</li>
 </ol>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E6%9B%B4%E6%96%B0%E6%BA%90/2.%E9%80%89%E6%8B%A9%E5%B9%B6%E7%A1%AE%E5%AE%9A%E9%95%9C%E5%83%8F%E6%BA%90.png" srcset="/img/loading.gif" lazyload alt="镜像源生效"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E6%9B%B4%E6%96%B0%E6%BA%90/2.%E9%80%89%E6%8B%A9%E5%B9%B6%E7%A1%AE%E5%AE%9A%E9%95%9C%E5%83%8F%E6%BA%90.png" alt="镜像源生效"  />
 </div>
 4. 最后执行如下命令更新软件与系统
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pacman -Syy<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy</span><br></pre></td></tr></table></figure>
 
 
 
 <h3 id="2-1-2-方式二：通过配置文件"><a href="#2-1-2-方式二：通过配置文件" class="headerlink" title="2.1.2 方式二：通过配置文件"></a>2.1.2 方式二：通过配置文件</h3><ol>
 <li>首先打开配置文件</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">打开镜像配置文件</span><br>nano /etc/pacman.d/mirrorlist<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开镜像配置文件</span></span><br><span class="line">nano /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure>
 
 
 
 <ol start="2">
 <li>找到 Server 关键字，并在这一区域附近添加需要的镜像站链接</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">添加开源镜像站链接</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">中国科学技术大学</span><br>Server = https://mirrors.ustc.edu.cn/manjaro/stable/$repo/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">重庆邮电大学</span><br>Server = https://mirrors.cqupt.edu.cn/manjaro/stable/$repo/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">重庆大学</span><br>Server = https://mirrors.cqu.edu.cn/manjaro/stable/$repo/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">南方科技大学</span><br>Server = https://mirrors.sustech.edu.cn/manjaro/stable/$repo/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">北京外国语大学</span><br>Server = https://mirrors.bfsu.edu.cn/manjaro/stable/$repo/$arch<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">华为镜像站</span><br>Server = https://mirrors.huaweicloud.com/manjaro/stable/$repo/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">阿里云镜像站</span><br>Server = https://mirrors.aliyun.com/manjaro/stable/$repo/$arch<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加开源镜像站链接</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">中国科学技术大学</span></span><br><span class="line">Server = https://mirrors.ustc.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重庆邮电大学</span></span><br><span class="line">Server = https://mirrors.cqupt.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重庆大学</span></span><br><span class="line">Server = https://mirrors.cqu.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">南方科技大学</span></span><br><span class="line">Server = https://mirrors.sustech.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">北京外国语大学</span></span><br><span class="line">Server = https://mirrors.bfsu.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">华为镜像站</span></span><br><span class="line">Server = https://mirrors.huaweicloud.com/manjaro/stable/$repo/$arch</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">阿里云镜像站</span></span><br><span class="line">Server = https://mirrors.aliyun.com/manjaro/stable/$repo/$arch</span><br></pre></td></tr></table></figure>
 
 
 
 <ol start="3">
 <li>最后执行如下命令更新软件与系统</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pacman -Syy<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy</span><br></pre></td></tr></table></figure>
 
 
 
@@ -605,21 +501,21 @@
 <ol>
 <li>使用 gedit 程序命令访问配置文件</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo gedit /etc/pacman.conf<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/pacman.conf</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>然后在文件末尾添加如下内容并保存</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs shell">[archlinuxcn]<br>SigLevel = TrustedOnly<br><span class="hljs-meta prompt_"># </span><span class="language-bash">中国科学技术大学</span><br>Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">重庆邮电大学</span><br>Server = https://mirrors.cqupt.edu.cn/archlinuxcn/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">重庆大学</span><br>Server = https://mirrors.cqu.edu.cn/archlinuxcn/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">南方科技大学</span><br>Server = https://mirrors.sustech.edu.cn/archlinuxcn/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">华中科技大学</span><br>Server = https://mirrors.hust.edu.cn/archlinuxcn/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">北京外国语大学</span><br>Server = https://mirrors.bfsu.edu.cn/archlinuxcn/$arch<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">阿里源</span><br>Server = https://mirrors.aliyun.com/archlinuxcn/$arch<br><span class="hljs-meta prompt_"># </span><span class="language-bash">163源</span><br>Server = http://mirrors.163.com/archlinux-cn/$arch<br><br><br>[arch4edu]<br>SigLevel = Optional TrustAll<br><span class="hljs-meta prompt_"># </span><span class="language-bash">阿里edu源</span><br>Server = https://mirrors.aliyun.com/arch4edu/$arch<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = TrustedOnly</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">中国科学技术大学</span></span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重庆邮电大学</span></span><br><span class="line">Server = https://mirrors.cqupt.edu.cn/archlinuxcn/$arch</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重庆大学</span></span><br><span class="line">Server = https://mirrors.cqu.edu.cn/archlinuxcn/$arch</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">南方科技大学</span></span><br><span class="line">Server = https://mirrors.sustech.edu.cn/archlinuxcn/$arch</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">华中科技大学</span></span><br><span class="line">Server = https://mirrors.hust.edu.cn/archlinuxcn/$arch</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">北京外国语大学</span></span><br><span class="line">Server = https://mirrors.bfsu.edu.cn/archlinuxcn/$arch</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">阿里源</span></span><br><span class="line">Server = https://mirrors.aliyun.com/archlinuxcn/$arch</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">163源</span></span><br><span class="line">Server = http://mirrors.163.com/archlinux-cn/$arch</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[arch4edu]</span><br><span class="line">SigLevel = Optional TrustAll</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">阿里edu源</span></span><br><span class="line">Server = https://mirrors.aliyun.com/arch4edu/$arch</span><br></pre></td></tr></table></figure>
 
 
 
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E6%9B%B4%E6%96%B0%E6%BA%90/4.%E5%8A%A0%E5%85%A5archlinuxcn%E5%92%8Carch4edu%E6%BA%90.png" srcset="/img/loading.gif" lazyload alt="更换archlinuxcn和arch4edu源"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E6%9B%B4%E6%96%B0%E6%BA%90/4.%E5%8A%A0%E5%85%A5archlinuxcn%E5%92%8Carch4edu%E6%BA%90.png" alt="更换archlinuxcn和arch4edu源"  />
 </div>
 3. 最后执行如下命令更新软件与系统
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pacman -Syyu<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syyu</span><br></pre></td></tr></table></figure>
 
 
 
@@ -638,25 +534,25 @@
 <li>Fcitx5 依赖安装</li>
 </ol>
 <p>安装 Fcitx5 输入法首先需要下载 fcitx5 的依赖包。通过如下命令安装这些依赖包：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span>  <br><span class="hljs-meta prompt_"># </span><span class="language-bash">由于之前装过 Fcitx ，所以需先卸载</span><br>sudo pacman -Rs $(pacman -Qsq fcitx)<br><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span> <br><span class="hljs-meta prompt_"># </span><span class="language-bash">Fcitx5 本体</span><br>sudo pacman -S fcitx5 <br><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span> <br><span class="hljs-meta prompt_"># </span><span class="language-bash">集成了[fctxi5]、[fctxi5-configtool]、[fctxi5-gtk]、[fctxi5-qt]</span><br>sudo pacman -S fcitx5-im<br><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span> <br><span class="hljs-meta prompt_"># </span><span class="language-bash">Fcitx5 配置工具</span><br>sudo pacman -S fcitx5-configtool  <br><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span> <br><span class="hljs-meta prompt_"># </span><span class="language-bash">对 Qt 程序软件的支持</span><br>sudo pacman -S fcitx5-qt		# 集成 Qt5 和 Qt6 依赖库<br>sudo pacman -S fcitx5-qt4		# 单独集成 Qt4 依赖库<br>sudo pacman -S fcitx5-qt5-git		# 单独集成 Qt5 依赖库<br>sudo pacman -S fcitx5-qt6-git		# 单独集成 Qt6 依赖库<br><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span> <br><span class="hljs-meta prompt_"># </span><span class="language-bash">Fcitx5 对于 GTK 程序的支持</span><br>sudo pacman -S fcitx5-gtk<br><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span> <br><span class="hljs-meta prompt_"># </span><span class="language-bash">Fcitx5 对于中文相关的 addon，例如拼音、双拼和五笔</span><br>sudo pacman -S fcitx5-chinese-addons<br><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span> <br><span class="hljs-meta prompt_"># </span><span class="language-bash">Fcitx5 的第三方主题库</span><br>sudo pacman -S fcitx5-material-color<br><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span> <br><span class="hljs-meta prompt_"># </span><span class="language-bash">Fcitx5 对 KDE 桌面环境的支持</span><br>sudo pacman -S kcm-fcitx5<br><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span> <br><span class="hljs-meta prompt_"># </span><span class="language-bash">Fcitx5 对日期时间的支持</span><br>sudo pacman -S fcitx5-lua<br><span class="hljs-meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="hljs-comment">#</span></span> <br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="comment">#</span></span>  </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">由于之前装过 Fcitx ，所以需先卸载</span></span><br><span class="line">sudo pacman -Rs $(pacman -Qsq fcitx)</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="comment">#</span></span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Fcitx5 本体</span></span><br><span class="line">sudo pacman -S fcitx5 </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="comment">#</span></span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">集成了[fctxi5]、[fctxi5-configtool]、[fctxi5-gtk]、[fctxi5-qt]</span></span><br><span class="line">sudo pacman -S fcitx5-im</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="comment">#</span></span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Fcitx5 配置工具</span></span><br><span class="line">sudo pacman -S fcitx5-configtool  </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="comment">#</span></span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">对 Qt 程序软件的支持</span></span><br><span class="line">sudo pacman -S fcitx5-qt		# 集成 Qt5 和 Qt6 依赖库</span><br><span class="line">sudo pacman -S fcitx5-qt4		# 单独集成 Qt4 依赖库</span><br><span class="line">sudo pacman -S fcitx5-qt5-git		# 单独集成 Qt5 依赖库</span><br><span class="line">sudo pacman -S fcitx5-qt6-git		# 单独集成 Qt6 依赖库</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="comment">#</span></span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Fcitx5 对于 GTK 程序的支持</span></span><br><span class="line">sudo pacman -S fcitx5-gtk</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="comment">#</span></span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Fcitx5 对于中文相关的 addon，例如拼音、双拼和五笔</span></span><br><span class="line">sudo pacman -S fcitx5-chinese-addons</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="comment">#</span></span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Fcitx5 的第三方主题库</span></span><br><span class="line">sudo pacman -S fcitx5-material-color</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="comment">#</span></span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Fcitx5 对 KDE 桌面环境的支持</span></span><br><span class="line">sudo pacman -S kcm-fcitx5</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="comment">#</span></span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Fcitx5 对日期时间的支持</span></span><br><span class="line">sudo pacman -S fcitx5-lua</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">------------------------------------------------------------------------------ <span class="comment">#</span></span> </span><br></pre></td></tr></table></figure>
 
 <p>通常想要运行 Fcitx5 的输入法环境只需要安装 fcitx5-im 即可，如果有更多定制化操作可视情况而定。</p>
 <ol start="2">
 <li>Fcitx5 环境配置</li>
 </ol>
 <p>访问 <code>/etc/environment</code> 文件并将如下内容追加到文件末尾：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">GTK_IM_MODULE=fcitx5<br>QT_IM_MODULE=fcitx5<br>XMODIFIERS=@im=fcitx5<br>SDL_IM_MODULE=fcitx5<br>INPUT_METHOD=fcitx5<br>GLFW_IM_MODULE=fcitx<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">GTK_IM_MODULE=fcitx5</span><br><span class="line">QT_IM_MODULE=fcitx5</span><br><span class="line">XMODIFIERS=@im=fcitx5</span><br><span class="line">SDL_IM_MODULE=fcitx5</span><br><span class="line">INPUT_METHOD=fcitx5</span><br><span class="line">GLFW_IM_MODULE=fcitx</span><br></pre></td></tr></table></figure>
 
 <p>然后注销登陆重启输入法或者重启系统即可，如果想要添加词库，可运行 <code>Fcitx5</code> 配置软件对拼音输入法进行配置。</p>
 <h3 id="3-1-2-Fcitx-输入法安装"><a href="#3-1-2-Fcitx-输入法安装" class="headerlink" title="3.1.2 Fcitx 输入法安装"></a>3.1.2 Fcitx 输入法安装</h3><ul>
 <li>安装搜狗输入法首先需要下载 <code>Fcitx</code> 的依赖包。通过如下命令安装这些依赖包：</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pacman -S fcitx fcitx-configtool fcitx-gtk2 fcitx-gtk3 fcitx-qt5 fcitx-qt6<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S fcitx fcitx-configtool fcitx-gtk2 fcitx-gtk3 fcitx-qt5 fcitx-qt6</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>然后访问 ~&#x2F;.xprofile 文件并在末尾追加如下内容：</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">export GTK_IM_MODULE=fcitx<br>export QT_IM_MODULE=fcitx<br>export XMODIFIERS=&quot;@im=fcitx&quot;<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=&quot;@im=fcitx&quot;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -681,16 +577,16 @@
 <ul>
 <li>然后通过从 <a target="_blank" rel="noopener" href="https://aur.archlinux.org/packages?O=0&SeB=nd&K=sogou&outdated=&SB=p&SO=d&PP=50&submit=Go">AUR</a> 上给拉取软件包 git 链接到本地</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git clone &lt;Target Source Address&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone &lt;Target Source Address&gt;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>然后进入项目文件夹直接开始构建安装软件包</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd fcitx-sogoupinyin<br>makepkg -si<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd fcitx-sogoupinyin</span><br><span class="line">makepkg -si</span><br></pre></td></tr></table></figure>
 
 <p>此时会出现如下图所示的错误：</p>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/%E6%90%9C%E7%8B%97%E6%8B%BC%E9%9F%B3%E5%AE%89%E8%A3%85.png" srcset="/img/loading.gif" lazyload alt="搜狗拼音安装"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/%E6%90%9C%E7%8B%97%E6%8B%BC%E9%9F%B3%E5%AE%89%E8%A3%85.png" alt="搜狗拼音安装"  />
 </div>
 
 <p>这一错误会导致需要安装的 deb 包下载失败，从而导致整个安装过程的失败。为了避免此错误，笔者采用的方式是从 <a target="_blank" rel="noopener" href="https://shurufa.sogou.com/">搜狗拼音输入法官网</a> 下载 deb 包放到此项目文件夹中，然后使用 PKGBUILD 文件构建安装软件包。不出意外的话，搜狗拼音输入法就安装完毕了。</p>
@@ -698,7 +594,7 @@
 <li>最后重启 Manjaro 系统，然后在 Fcitx 配置软件中将搜狗拼音输入法添加为第二输入法。这样就可以正常使用了。</li>
 </ul>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Fcitx%E9%85%8D%E7%BD%AE%E6%90%9C%E7%8B%97%E6%8B%BC%E9%9F%B3%E8%BE%93%E5%85%A5%E6%B3%95.png" srcset="/img/loading.gif" lazyload alt="Fcitx配置搜狗输入法"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Fcitx%E9%85%8D%E7%BD%AE%E6%90%9C%E7%8B%97%E6%8B%BC%E9%9F%B3%E8%BE%93%E5%85%A5%E6%B3%95.png" alt="Fcitx配置搜狗输入法"  />
 </div>
 
 
@@ -707,28 +603,28 @@
 <ol>
 <li>启用 <code>debug-shell.sevice</code> 服务</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo systemctl enable debug-shell.service<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable debug-shell.service</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>关机出现问题时使用 <code>Alt+F9</code> 进入 shell 调试命令行</li>
 <li>使用 systemctl status 命令查看正在运行的服务</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo systemctl list-unit-files --type=service | grep enabled<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl list-unit-files --type=service | grep enabled</span><br></pre></td></tr></table></figure>
 
 <p>此时发现了 <code>user@1000.service</code> 仍在运行</p>
 <ol start="4">
-<li>使用 systemctl status 命令继续查看 <a href="mailto:&#x75;&#115;&#101;&#x72;&#x40;&#49;&#48;&#48;&#x30;&#46;&#115;&#101;&#x72;&#118;&#105;&#x63;&#x65;">&#x75;&#115;&#101;&#x72;&#x40;&#49;&#48;&#48;&#x30;&#46;&#115;&#101;&#x72;&#118;&#105;&#x63;&#x65;</a> 服务</li>
+<li>使用 systemctl status 命令继续查看 <a href="mailto:&#x75;&#115;&#101;&#x72;&#x40;&#49;&#x30;&#x30;&#x30;&#46;&#x73;&#x65;&#114;&#118;&#105;&#99;&#x65;">&#x75;&#115;&#101;&#x72;&#x40;&#49;&#x30;&#x30;&#x30;&#46;&#x73;&#x65;&#114;&#118;&#105;&#99;&#x65;</a> 服务</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo systemctl status user@1000.service<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status user@1000.service</span><br></pre></td></tr></table></figure>
 
 <p>此时便定位到了 <code>user@1000.service</code> 服务下的 sogoupinyin -service 子服务仍然在运行。</p>
 <h2 id="3-2-回滚工具安装"><a href="#3-2-回滚工具安装" class="headerlink" title="3.2 回滚工具安装"></a>3.2 回滚工具安装</h2><p>使用如下命令可以安装回滚工具（TimeShift）：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pacman -S timeshift<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S timeshift</span><br></pre></td></tr></table></figure>
 
 
 
 <h2 id="3-3-Chrome-浏览器安装"><a href="#3-3-Chrome-浏览器安装" class="headerlink" title="3.3 Chrome 浏览器安装"></a>3.3 Chrome 浏览器安装</h2><p>使用如下命令可以安装谷歌浏览器（google-chrome）：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pacman -S google-chrome<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S google-chrome</span><br></pre></td></tr></table></figure>
 
 
 
@@ -740,23 +636,23 @@
 </li>
 </ol>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E8%BD%AF%E4%BB%B6%E8%BD%AC%E5%8C%85.png" srcset="/img/loading.gif" lazyload alt="Clash转包"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E8%BD%AF%E4%BB%B6%E8%BD%AC%E5%8C%85.png" alt="Clash转包"  />
 </div>
 
 <ol start="3">
 <li>打包完成后会生成一个 <code>.pkg.tar.zst</code> 的软件包，然后通过 <code>pacman</code> 命令进行本地安装</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pacman -U &lt;Packge Name&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -U &lt;Packge Name&gt;</span><br></pre></td></tr></table></figure>
 
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85.png" srcset="/img/loading.gif" lazyload alt="Clash本地安装"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85.png" alt="Clash本地安装"  />
 </div>
 
 <ol start="4">
 <li>想要正常使用，还需要设置系统网络代理，下图展示的是笔者的代理参数：</li>
 </ol>
 <div style="text-align: center;">
-    <img src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86.png" srcset="/img/loading.gif" lazyload alt="设置系统网络代理"  />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://dustwind-picture-upload.oss-cn-chengdu.aliyuncs.com/img/Manjaro%20Install/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Clash%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86.png" alt="设置系统网络代理"  />
 </div>
 
 <blockquote>
@@ -772,24 +668,24 @@
 </blockquote>
 <p>至此，Clash for Windows 的 Manjaro 版本便安装完毕。</p>
 <h3 id="3-4-2-Clash-Verge"><a href="#3-4-2-Clash-Verge" class="headerlink" title="3.4.2 Clash Verge"></a>3.4.2 Clash Verge</h3><p>除了使用 Clash for Windows 之外，你还可以选择使用基于 <code>Tauri</code> 的 Clash Verge 软件。具体的安装可采用如下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yay -S clash-verge-rev-bin<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S clash-verge-rev-bin</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p><strong>注</strong>：</p>
 <p>装完打不开前端面板，疑似N卡最新闭源驱动不支持 webkit 硬件渲染。解决的办法是在 <code>/etc/environment</code> 配置文件中添加环境变量: <code>WEBKIT_DISABLE_COMPOSITING_MODE=1</code>。</p>
 </blockquote>
 <h2 id="3-5-QQ-安装"><a href="#3-5-QQ-安装" class="headerlink" title="3.5 QQ 安装"></a>3.5 QQ 安装</h2><p>近年来，随着国产 Linux 发行版的兴起。QQ 也顺应时代通过 QQNT（Electron）技术对原先的腾讯QQ进行改造并至今发布多个版本。可以通过以下命令进行安装：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yay -S linuxqq<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S linuxqq</span><br></pre></td></tr></table></figure>
 
 
 
 <h2 id="3-6-微信安装"><a href="#3-6-微信安装" class="headerlink" title="3.6 微信安装"></a>3.6 微信安装</h2><p>近期，腾讯公司推出了运行在国产 Linux 发行版系统上的 Universal 版微信。此版本一经推出，受到广大 Linux 用户及开发者的关注，AUR 上的大佬通过打包将这一安装包发布在 AUR 仓库。笔者也第一时间去安装体验了这一版本。具体安装如下指令所示：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yay -S wechat-universal-bwrap<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S wechat-universal-bwrap</span><br></pre></td></tr></table></figure>
 
 
 
 <h2 id="3-7-腾讯会议安装"><a href="#3-7-腾讯会议安装" class="headerlink" title="3.7 腾讯会议安装"></a>3.7 腾讯会议安装</h2><p>腾讯会议可在官网下载各种架构的 Linux 版本，下载 deb 包自行打包也可以，当然也可以在 AUR 上获取相应的软件安装包。笔者习惯在 AUR 上获取软件，具体命令如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yay -S wemeet-bin<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S wemeet-bin</span><br></pre></td></tr></table></figure>
 
 
 
@@ -801,17 +697,17 @@
 </li>
 </ul>
 <p>在这里，笔者使用了更高版本的 qqmusic-electron ，具体安装参照如下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yay -S qqmusic-electron <br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S qqmusic-electron </span><br></pre></td></tr></table></figure>
 
 
 
 <h2 id="3-9-顶部栏隐藏"><a href="#3-9-顶部栏隐藏" class="headerlink" title="3.9 顶部栏隐藏"></a>3.9 顶部栏隐藏</h2><p>此插件的功能是当应用最大化时能自动隐藏顶部栏，此软件通过 yay 安装即可。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yay -S gnome-shell-extension-hidetopbar-git<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S gnome-shell-extension-hidetopbar-git</span><br></pre></td></tr></table></figure>
 
 
 
 <h2 id="3-10-WPS-Office-套件安装"><a href="#3-10-WPS-Office-套件安装" class="headerlink" title="3.10 WPS Office 套件安装"></a>3.10 WPS Office 套件安装</h2><p>使用如下命令即可安装 WPS 套件：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">WPS软件本体（国际版）</span><br>yay -S wps-office<br><span class="hljs-meta prompt_"># </span><span class="language-bash">WPS的中文语言包</span><br>yay -S wps-office-mui-zh-cn<br><span class="hljs-meta prompt_"># </span><span class="language-bash">WPS的符号依赖包</span><br>yay -S ttf-wps-fonts<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">WPS软件本体（国际版）</span></span><br><span class="line">yay -S wps-office</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">WPS的中文语言包</span></span><br><span class="line">yay -S wps-office-mui-zh-cn</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">WPS的符号依赖包</span></span><br><span class="line">yay -S ttf-wps-fonts</span><br></pre></td></tr></table></figure>
 
 
 
@@ -827,7 +723,7 @@
 </ol>
 </blockquote>
 <h2 id="3-11-GitHub-Desktop-安装"><a href="#3-11-GitHub-Desktop-安装" class="headerlink" title="3.11 GitHub Desktop 安装"></a>3.11 GitHub Desktop 安装</h2><p>Github Desktop 在 AUR 上有相应的包，这里可以通过如下命令安装：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">AUR上有许多版本，这里选用的是中文版</span><br>yay -S github-desktop-zh-bin<br><span class="hljs-meta prompt_"># </span><span class="language-bash">如果使用原生的英文版，可用如下指令安装</span><br>yay -S github-desktop-bin<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">AUR上有许多版本，这里选用的是中文版</span></span><br><span class="line">yay -S github-desktop-zh-bin</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如果使用原生的英文版，可用如下指令安装</span></span><br><span class="line">yay -S github-desktop-bin</span><br></pre></td></tr></table></figure>
 
 
 
@@ -835,7 +731,7 @@
 <ol>
 <li><code>Notepadqq</code> 软件安装：</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yay -S notepadqq<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S notepadqq</span><br></pre></td></tr></table></figure>
 
 
 
@@ -847,363 +743,157 @@
 <li><code>Notepad--</code> 软件安装：</li>
 </ol>
 <p>此软件是对于 <code>Notepad++</code> 的国产软件替代，笔者也相当推荐使用此软件。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">此处有三个 `-`</span><br>yay -S notepad---bin<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">此处有三个 `-`</span></span><br><span class="line">yay -S notepad---bin</span><br></pre></td></tr></table></figure>
 
 
 
 <ol start="3">
 <li><code>Typora</code> 软件安装：</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yay -S typora<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S typora</span><br></pre></td></tr></table></figure>
 
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">DustWind</div><div class="post-copyright__author_desc">心中有海，不赶浪潮</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2025/01/29/Manjaro%20%E5%8F%8A%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2025/01/29/Manjaro%20%E5%8F%8A%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/')">Manjaro 及常用软件安装配置</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2025/01/29/Manjaro%20%E5%8F%8A%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=Manjaro 及常用软件安装配置&amp;url=http://example.com/2025/01/29/Manjaro%20%E5%8F%8A%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">二十七画生</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/Linux/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>Linux<span class="tagsPageCount">7</span></a><a class="post-meta__box__tags" href="/tags/Manjaro/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>Manjaro<span class="tagsPageCount">4</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/01/23/Manjaro%20%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%88%9B%E5%BB%BA/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Manjaro 桌面图标创建</div></div></a></div><div class="next-post pull-right"><a href="/2025/01/31/Manjaro%20%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Manjaro 的软件安装方式</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2025/01/31/Manjaro%20%E4%BD%BF%E7%94%A8%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" title="Manjaro 使用常见问题汇总"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-01-31</div><div class="title">Manjaro 使用常见问题汇总</div></div></a></div><div><a href="/2025/01/23/Manjaro%20%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%88%9B%E5%BB%BA/" title="Manjaro 桌面图标创建"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-01-23</div><div class="title">Manjaro 桌面图标创建</div></div></a></div><div><a href="/2025/01/31/Manjaro%20%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F/" title="Manjaro 的软件安装方式"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-01-31</div><div class="title">Manjaro 的软件安装方式</div></div></a></div><div><a href="/2025/04/06/ArchLinux%20+%20GNOME%20%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="ArchLinux + GNOME 安装教程"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-04-06</div><div class="title">ArchLinux + GNOME 安装教程</div></div></a></div><div><a href="/2022/04/29/Linux%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Linux 常用命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-04-29</div><div class="title">Linux 常用命令</div></div></a></div><div><a href="/2022/01/15/Win11%20%E7%8E%AF%E5%A2%83%E4%B8%8B%20WSL2%20%E7%9A%84%E5%AD%90%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/" title="Win11 环境下 WSL2 的子系统部署"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-01-15</div><div class="title">Win11 环境下 WSL2 的子系统部署</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description"></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-Manjaro%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">一.Manjaro安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E5%AE%89%E8%A3%85%E5%8C%85%E5%8F%8A%E5%B7%A5%E5%85%B7%E8%8E%B7%E5%8F%96"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 安装包及工具获取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%E5%AE%89%E8%A3%85%E5%8C%85%E8%8E%B7%E5%8F%96"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1.1 安装包获取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%E5%86%99%E5%85%A5%E5%B7%A5%E5%85%B7%E9%80%89%E6%8B%A9"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.1.2 写入工具选择</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E5%86%99%E5%85%A5%E7%9B%98%E5%88%B6%E4%BD%9C"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 写入盘制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.3.</span> <span class="toc-text">1.3 安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-%E8%AF%AD%E8%A8%80%E5%8F%8A%E9%A9%B1%E5%8A%A8%E9%80%89%E6%8B%A9"><span class="toc-number">2.3.1.</span> <span class="toc-text">1.3.1 语言及驱动选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-%E8%BD%BD%E5%85%A5%E5%86%85%E6%A0%B8%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%95%8C%E9%9D%A2"><span class="toc-number">2.3.2.</span> <span class="toc-text">1.3.2 载入内核与系统界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-3-%E7%B3%BB%E7%BB%9F%E6%AC%A2%E8%BF%8E%E9%A1%B5"><span class="toc-number">2.3.3.</span> <span class="toc-text">1.3.3 系统欢迎页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-4-%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E9%A1%B5"><span class="toc-number">2.3.4.</span> <span class="toc-text">1.3.4 进入系统安装页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-5-%E5%9C%B0%E5%8C%BA%E5%8F%8A%E9%94%AE%E7%9B%98%E5%B8%83%E5%B1%80"><span class="toc-number">2.3.5.</span> <span class="toc-text">1.3.5 地区及键盘布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-6-%E7%B3%BB%E7%BB%9F%E5%88%86%E5%8C%BA"><span class="toc-number">2.3.6.</span> <span class="toc-text">1.3.6 系统分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-7-%E7%94%A8%E6%88%B7%E5%90%8D%E5%8F%8A%E5%AF%86%E7%A0%81%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.3.7.</span> <span class="toc-text">1.3.7 用户名及密码设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-8-Office%E5%A5%97%E4%BB%B6"><span class="toc-number">2.3.8.</span> <span class="toc-text">1.3.8 Office套件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-9-%E5%BC%80%E5%A7%8B%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85"><span class="toc-number">2.3.9.</span> <span class="toc-text">1.3.9 开始系统安装</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E7%B3%BB%E7%BB%9F%E6%8D%A2%E6%BA%90"><span class="toc-number">3.</span> <span class="toc-text">二.系统换源</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E8%8E%B7%E5%8F%96%E6%BA%90%E5%88%97%E8%A1%A8%E5%B9%B6%E6%9B%B4%E6%8D%A2%E5%AE%98%E6%96%B9%E6%BA%90"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 获取源列表并更换官方源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%E6%96%B9%E5%BC%8F%E4%B8%80%EF%BC%9A%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-number">3.1.1.</span> <span class="toc-text">2.1.1 方式一：通过命令行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%E6%96%B9%E5%BC%8F%E4%BA%8C%EF%BC%9A%E9%80%9A%E8%BF%87%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">3.1.2.</span> <span class="toc-text">2.1.2 方式二：通过配置文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Arch-Linux-CN-%E6%BA%90%E6%9B%B4%E6%8D%A2"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 Arch Linux CN 源更换</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">4.</span> <span class="toc-text">三.常用软件安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 输入法安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-Fcitx5-%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85"><span class="toc-number">4.1.1.</span> <span class="toc-text">3.1.1 Fcitx5 输入法安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-Fcitx-%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85"><span class="toc-number">4.1.2.</span> <span class="toc-text">3.1.2 Fcitx 输入法安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-3-%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85"><span class="toc-number">4.1.3.</span> <span class="toc-text">3.1.3 搜狗输入法安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-4-%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95%E5%AE%89%E8%A3%85%E5%AF%BC%E8%87%B4%E9%97%AE%E9%A2%98"><span class="toc-number">4.1.4.</span> <span class="toc-text">3.1.4 搜狗输入法安装导致问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E5%9B%9E%E6%BB%9A%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 回滚工具安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-Chrome-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E8%A3%85"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 Chrome 浏览器安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-Clash-%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">4.4.</span> <span class="toc-text">3.4 Clash 软件安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1-Clash-for-Windows"><span class="toc-number">4.4.1.</span> <span class="toc-text">3.4.1 Clash for Windows</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2-Clash-Verge"><span class="toc-number">4.4.2.</span> <span class="toc-text">3.4.2 Clash Verge</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-QQ-%E5%AE%89%E8%A3%85"><span class="toc-number">4.5.</span> <span class="toc-text">3.5 QQ 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-%E5%BE%AE%E4%BF%A1%E5%AE%89%E8%A3%85"><span class="toc-number">4.6.</span> <span class="toc-text">3.6 微信安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7-%E8%85%BE%E8%AE%AF%E4%BC%9A%E8%AE%AE%E5%AE%89%E8%A3%85"><span class="toc-number">4.7.</span> <span class="toc-text">3.7 腾讯会议安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8-QQ%E9%9F%B3%E4%B9%90%E5%AE%89%E8%A3%85"><span class="toc-number">4.8.</span> <span class="toc-text">3.8 QQ音乐安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-9-%E9%A1%B6%E9%83%A8%E6%A0%8F%E9%9A%90%E8%97%8F"><span class="toc-number">4.9.</span> <span class="toc-text">3.9 顶部栏隐藏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-10-WPS-Office-%E5%A5%97%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">4.10.</span> <span class="toc-text">3.10 WPS Office 套件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-11-GitHub-Desktop-%E5%AE%89%E8%A3%85"><span class="toc-number">4.11.</span> <span class="toc-text">3.11 GitHub Desktop 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-12-%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6"><span class="toc-number">4.12.</span> <span class="toc-text">3.12 笔记软件</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/11/06/Obsidian%20UML%20%E5%9B%BE%E6%8F%92%E4%BB%B6/" title="Obsidian UML 图插件">Obsidian UML 图插件</a><time datetime="2025-11-06T12:16:10.000Z" title="发表于 2025-11-06 20:16:10">2025-11-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/11/06/Java%20%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="Java 环境配置">Java 环境配置</a><time datetime="2025-11-06T11:16:10.000Z" title="发表于 2025-11-06 19:16:10">2025-11-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/27/%E9%85%8D%E7%BD%AE%20VS2022%20%E4%BB%A5%E5%8F%8A%20Qt%20%E7%8E%AF%E5%A2%83/" title="配置 VS2022 以及 Qt 环境">配置 VS2022 以及 Qt 环境</a><time datetime="2025-10-26T16:16:10.000Z" title="发表于 2025-10-27 00:16:10">2025-10-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/20/Docker%20%E9%85%8D%E7%BD%AE%20Redis%20%E5%92%8C%20MySQL/" title="Docker 配置 Redis 和 MySQL">Docker 配置 Redis 和 MySQL</a><time datetime="2025-10-20T14:01:10.000Z" title="发表于 2025-10-20 22:01:10">2025-10-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/20/%E9%85%8D%E7%BD%AE%20Redis/" title="配置 Redis">配置 Redis</a><time datetime="2025-10-20T14:01:10.000Z" title="发表于 2025-10-20 22:01:10">2025-10-20</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2025 By <a class="footer-bar-link" href="/" title="DustWind" target="_blank">DustWind</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">0</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Arch/" style="font-size: 0.88rem;">Arch<sup>1</sup></a><a href="/tags/C-CPP/" style="font-size: 0.88rem;">C/CPP<sup>4</sup></a><a href="/tags/CPP/" style="font-size: 0.88rem;">CPP<sup>1</sup></a><a href="/tags/Desktop-Entry/" style="font-size: 0.88rem;">Desktop Entry<sup>1</sup></a><a href="/tags/Docker/" style="font-size: 0.88rem;">Docker<sup>2</sup></a><a href="/tags/GNOME/" style="font-size: 0.88rem;">GNOME<sup>1</sup></a><a href="/tags/Git/" style="font-size: 0.88rem;">Git<sup>1</sup></a><a href="/tags/Hello-World/" style="font-size: 0.88rem;">Hello World<sup>1</sup></a><a href="/tags/Hexo/" style="font-size: 0.88rem;">Hexo<sup>1</sup></a><a href="/tags/JDK/" style="font-size: 0.88rem;">JDK<sup>1</sup></a><a href="/tags/Java/" style="font-size: 0.88rem;">Java<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 0.88rem;">Linux<sup>7</sup></a><a href="/tags/Manjaro/" style="font-size: 0.88rem;">Manjaro<sup>4</sup></a><a href="/tags/Markdown/" style="font-size: 0.88rem;">Markdown<sup>1</sup></a><a href="/tags/MySQL/" style="font-size: 0.88rem;">MySQL<sup>3</sup></a><a href="/tags/Obsidian/" style="font-size: 0.88rem;">Obsidian<sup>2</sup></a><a href="/tags/ProtoBuf/" style="font-size: 0.88rem;">ProtoBuf<sup>1</sup></a><a href="/tags/Qt/" style="font-size: 0.88rem;">Qt<sup>3</sup></a><a href="/tags/Redis/" style="font-size: 0.88rem;">Redis<sup>2</sup></a><a href="/tags/STL/" style="font-size: 0.88rem;">STL<sup>1</sup></a><a href="/tags/UML/" style="font-size: 0.88rem;">UML<sup>1</sup></a><a href="/tags/VS/" style="font-size: 0.88rem;">VS<sup>1</sup></a><a href="/tags/WSL/" style="font-size: 0.88rem;">WSL<sup>1</sup></a><a href="/tags/Windows/" style="font-size: 0.88rem;">Windows<sup>1</sup></a><a href="/tags/classDiagram/" style="font-size: 0.88rem;">classDiagram<sup>1</sup></a><a href="/tags/gRPC/" style="font-size: 0.88rem;">gRPC<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
 
-                
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 DustWind 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
   
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
-      
-        <a href="/tags/Manjaro/" class="print-no-link">#Manjaro</a>
-      
-    </div>
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>Manjaro 及常用软件安装配置</div>
-      <div>http://example.com/2025/01/29/Manjaro 及常用软件安装配置/</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>作者</div>
-          <div>DustWind</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>发布于</div>
-          <div>2025年1月29日</div>
-        </div>
-      
-      
-      
-        <div class="license-meta-item">
-          <div>许可协议</div>
-          <div>
-            
-              
-              
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                    <i class="iconfont icon-by"></i>
-                  </span>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
-
-
-
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2025/01/31/Manjaro%20%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F/" title="Manjaro 的软件安装方式">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Manjaro 的软件安装方式</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2025/01/23/Manjaro%20%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%88%9B%E5%BB%BA/" title="Manjaro 桌面图标创建">
-                        <span class="hidden-mobile">Manjaro 桌面图标创建</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-          </article>
-        </div>
-      </div>
-    </div>
-
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>目录</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-  
-  
-</div>
-
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
       }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
-
-    window.tocbot.init(Object.assign({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      scrollSmooth    : true,
-      includeTitleTags: true,
-      headingsOffset  : -boardTop,
-    }, CONFIG.toc));
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
     }
+  }
 
-    Fluid.events.registerRefreshCallback(function() {
-      if ('tocbot' in window) {
-        tocbot.refresh();
-        var toc = jQuery('#toc');
-        if (toc.length === 0 || !tocbot) {
-          return;
-        }
-        if (toc.find('.toc-list-item').length > 0) {
-          toc.css('visibility', 'visible');
-        }
-      }
-    });
-  });
-</script>
+  typeof typed === 'object' && typed.destroy()
 
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
 
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
 
-  <script>Fluid.plugins.codeWidget();</script>
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
 
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
 
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
-    };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
+  typeof panguInit === 'function' && panguInit()
 
-    Fluid.events.registerRefreshCallback(function() {
-      if ('anchors' in window) {
-        anchors.removeAll();
-        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-        var res = [];
-        for (var item of el) {
-          res.push('.markdown-body > ' + item.trim());
-        }
-        if (CONFIG.anchorjs.placement === 'left') {
-          anchors.options.class = 'anchorjs-link-left';
-        }
-        anchors.add(res.join(', '));
-      }
-    });
-  });
-</script>
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
 
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
 
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
-</script>
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
 
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
 
-  <script>Fluid.plugins.imageCaption();</script>
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
-  </noscript>
-</body>
-</html>
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
